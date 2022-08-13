@@ -1,6 +1,6 @@
 .wrapperHeader {
   width: 100%;
-  background-color: rgba(109, 138, 168, 0.8);
+  background-color: rgba(108, 137, 167, 0.8);
   box-shadow: 0 0 5px rgba(4, 42, 86, 0.4);
   margin-bottom: 20px;
   height: 150px;
@@ -8,6 +8,7 @@
   top: 0;
   left: 0;
   transition: .5s;
+  z-index: 10;
 }
 .wrapperHeader.active{
     height: 100px;

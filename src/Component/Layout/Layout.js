@@ -1,7 +1,10 @@
-
+import './Layout.css'
+import Slider from './Slider/Slider'
 const Layout = () => {
   return (
-    <div>Layout</div>
+    <div className="wrapper-layout">
+      <Slider />
+    </div>
   )
 }
 
