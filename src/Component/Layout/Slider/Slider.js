@@ -2,18 +2,21 @@ import './Slider.css'
 import DataSlider from './DataSlider'
 import { useEffect, useState } from 'react'
 import BtnSlider from './BtnSlider'
+import SliderEffect from './SliderEffect'
+  const dataSlideSlice = (DataSlider ?? []).slice(0, 6)
+  console.log('dataSlideSlice', dataSlideSlice[1])
 const Slider = () => {
   const [state, setState] = useState({slideIdx: 1, });
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide()
-    }, 3000)
+    }, 5000)
   
     return () => {
       clearInterval(interval);
     }
   })
-  
+
   const nextSlide = () => {
     if(state.slideIdx !== DataSlider.length){
       setState(pre => ({...pre, slideIdx: state.slideIdx + 1}))
@@ -33,28 +36,13 @@ const Slider = () => {
   const moveDot = (id) => {
     setState(pre => ({...pre, slideIdx: id}))
   }
+
   return (
     <div className="wrapper-slider">
         <div className="container-slider">
-         {DataSlider?.map((item, idx) => {
-          return(
-            <div
-            className={ state.slideIdx === idx + 1 ? "slide active" : "slide"}
-            key={idx}
-            >
-              <img 
-                src={item.url}
-                alt={item.title}
-              />
-              <p>{item.title}</p>
-            </div>
-          )
-         })}
-         {/* <button style={{cursor: 'pointer', width: '100px', height: '100px', background:'red', position: 'absolute'}}>
-          <img style={{width: "25px", height: "25px"}} alt="" src="https://raw.githubusercontent.com/Ziratsu/slider-react/main/src/Components/Slider/icons/right-arrow.svg" />
-         </button> */}
-         <BtnSlider moveSlide={prevSlide} direction="prev" width="80" height="80" fill/>
-         <BtnSlider moveSlide={nextSlide} direction="next" width="80" height="80" fill/>
+         <SliderEffect data={dataSlideSlice} stateSlide={state.slideIdx} />
+         <BtnSlider moveSlide={prevSlide} direction="prev" className={"icon-prev"}/>
+         <BtnSlider moveSlide={nextSlide} direction="next" className={"icon-next"}/>
          <div className="container-dots">
           {Array.from({length: 6}).map((item, index) => (
             <div  
