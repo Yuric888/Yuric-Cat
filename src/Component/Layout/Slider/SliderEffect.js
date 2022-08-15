@@ -14,7 +14,10 @@ const SliderEffect = ({data = [], stateSlide}) => {
                 src={item.url}
                 alt={item.title}
               />
-              <p>{item.title}</p>
+              <div className="slide-info">
+                <h3>{item.title}</h3>
+                <p>{item.subTitle}</p>
+              </div>
             </div>
           )
          })}
