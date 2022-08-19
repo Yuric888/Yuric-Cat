@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import LogoYuric from '../Images_Svg/LogoYuric'
+import DataHeader from "./DataHeader";
 import './Header.css';
 const Header = () => {
   const [scrollState, setscrollState] = useState(false);
@@ -25,20 +26,21 @@ const Header = () => {
   }
   return (
     <div>
-    <header className={scrollState ? "wrapperHeader active": "wrapperHeader"}>
-      <div className={scrollState ? "containerHeader active" : "containerHeader"}>
+    <header className={scrollState ? "wrapper-header active": "wrapper-header"}>
+      <div className={scrollState ? "container-header active" : "container-header"}>
         <div className="logo-header"><LogoYuric /></div> 
         <div className={state.clickHeaderState ? "navbar active" : "navbar"}>
           <ul>
-            <li>
-              <a href="#home"><p>Home</p></a>
-            </li>
-            <li>
-              <a href="#about"><p>About</p></a>
-            </li>
-            <li>
-              <a href="#info"><p>Info</p></a>
-            </li>
+          { DataHeader.map((item, idx) => {
+            return(
+               <li 
+               key={idx}
+               onClick={() => setState(prev => ({...prev,clickHeaderState: false}))}
+               >
+                <a href={`#${item.href}`}><h1>{item.name}</h1></a>
+              </li>
+            )
+          })}  
           </ul>
         </div>
         <div 

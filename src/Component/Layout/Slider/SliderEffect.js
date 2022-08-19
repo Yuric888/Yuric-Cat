@@ -15,7 +15,7 @@ const SliderEffect = ({data = [], stateSlide}) => {
                 alt={item.title}
               />
               <div className="slide-info">
-                <h3>{item.title}</h3>
+                <h1>{item.title}</h1>
                 <p>{item.subTitle}</p>
               </div>
             </div>
