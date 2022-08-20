@@ -1,8 +1,8 @@
 .wrapper-behavior{
     width: 100%;
     background-color:rgb(244, 243, 242);
-     padding: 20px 0;
      box-sizing: border-box;
+    background-color: rgba(202, 210, 221, 0.8);
 }
 .container-behavior {
     width: 100%;
@@ -13,6 +13,7 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 @media (min-width: 540px) {
     .container-behavior {
@@ -38,8 +39,39 @@
 }
 .content-behavior{
     width: 100%;
-    height: calc(100vh - 150px);
-    background-position: center center;
+    height: 100vh;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-attachment: fixed;
+    
+}
+.text-1,
+.text-2,
+.text-3{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -1000px;
+}
+.content-behavior:nth-child(1) .text-1.active{
+    left: 50px;
+    top: 40%;
+}
+.content-behavior:nth-child(1) .text-2.active{
+    left: 30px;
+    top: 50%;
+}
+.content-behavior:nth-child(1) .text-3.active{
+    left: 50px;
+    top: 60%;
+}
+.content-behavior:nth-child(2) .text-1{
+
+}
+.content-behavior:nth-child(2) .text-2{
+
+}
+.content-behavior:nth-child(2) .text-3{
+
 }
