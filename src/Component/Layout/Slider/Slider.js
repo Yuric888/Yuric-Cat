@@ -7,15 +7,15 @@ import SliderEffect from './SliderEffect'
   console.log('dataSlideSlice', dataSlideSlice[1])
 const Slider = () => {
   const [state, setState] = useState({slideIdx: 1, });
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 8000)
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     nextSlide()
+  //   }, 8000)
   
-    return () => {
-      clearInterval(interval);
-    }
-  })
+  //   return () => {
+  //     clearInterval(interval);
+  //   }
+  // })
 
   const nextSlide = () => {
     if(state.slideIdx !== DataSlider.length){
