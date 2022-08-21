@@ -2,12 +2,12 @@ const DataHeader = [
     {
         id: 1,
         name: "Home",
-        href: "home"
+        href: "/"
     },
     {
         id: 2,
-        name: "About",
-        href: "about"
+        name: "Shop",
+        href: "shop"
     },
     {
         id: 3,

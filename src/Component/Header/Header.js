@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import LogoYuric from '../Images_Svg/LogoYuric'
 import DataHeader from "./DataHeader";
 import './Header.css';
+import { Link } from "react-router-dom";
 const Header = () => {
   const [scrollState, setscrollState] = useState(false);
   const [state, setState] = useState({clickHeaderState: false})
@@ -28,7 +29,11 @@ const Header = () => {
     <div>
     <header className={scrollState ? "wrapper-header active": "wrapper-header"}>
       <div className={scrollState ? "container-header active" : "container-header"}>
-        <div className="logo-header"><LogoYuric /></div> 
+        <div className="logo-header">
+          <Link to="/">
+            <LogoYuric />
+          </Link>
+        </div> 
         <div className={state.clickHeaderState ? "navbar active" : "navbar"}>
           <ul>
           { DataHeader.map((item, idx) => {
@@ -37,7 +42,9 @@ const Header = () => {
                key={idx}
                onClick={() => setState(prev => ({...prev,clickHeaderState: false}))}
                >
-                <a href={`#${item.href}`}><h1>{item.name}</h1></a>
+               <Link to={item.href}>
+                <h1>{item.name}</h1>
+                </Link>
               </li>
             )
           })}  

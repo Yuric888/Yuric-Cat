@@ -1,12 +1,12 @@
 import './App.css';
 import Header  from './Component/Header/Header';
-import Layout from './Component/Layout/Layout';
+import {Outlet} from 'react-router-dom'
 function App() {
   return (
     <div className="wrapper">
       <div className="container">
         <Header />
-        <Layout />
+        <Outlet />
         <footer className="footer"></footer>
       </div>
       

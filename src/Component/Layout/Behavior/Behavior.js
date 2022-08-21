@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react'
 import './Behavior.css'
 import DataBehavior from './DataBehavior.js'
 const Behavior = () => {
-  const [state, setState] = useState({activeState: false})
- 
   return (
     <div className="wrapper-behavior">
       
