@@ -7,3 +7,9 @@
     max-width: 25%;
 }
 }
+.container-filter{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    padding: 12px 10px;
+}

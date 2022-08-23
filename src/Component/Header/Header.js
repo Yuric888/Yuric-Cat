@@ -5,7 +5,7 @@ import './Header.css';
 import { Link } from "react-router-dom";
 const Header = () => {
   const [scrollState, setscrollState] = useState(false);
-  const [state, setState] = useState({clickHeaderState: false})
+  const [state, setState] = useState({clickHeaderState: false, currentPage: 0})
   useEffect(() => {
     const handleScrollHeader = () => {
       setscrollState((scrollState) => {
@@ -25,6 +25,9 @@ const Header = () => {
   const handleClickHeader = () => {
     setState(pre => ({...pre, clickHeaderState: !state.clickHeaderState}))
   }
+  const handleClick = (id) => {
+      setState(prev => ({...prev,currentPage: id}))
+  }
   return (
     <div>
     <header className={scrollState ? "wrapper-header active": "wrapper-header"}>
@@ -40,7 +43,8 @@ const Header = () => {
             return(
                <li 
                key={idx}
-               onClick={() => setState(prev => ({...prev,clickHeaderState: false}))}
+               onClick={() => handleClick(idx)}
+               className={state.currentPage + 1 === item.id ? "active" : ""}
                >
                <Link to={item.href}>
                 <h1>{item.name}</h1>

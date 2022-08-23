@@ -119,21 +119,9 @@
     transform: translateY(0px) rotate(-45deg);
 }
 .navbar{
-    visibility: hidden;
-    height: 100%;
-    width:0;
-    transition: 1s;
-    background-color: transparent;
-    overflow: hidden;
-    transform: scale(0);
+    margin-right: 50px;
 }
 
-.navbar.active{
-      opacity: 1;
-      visibility: visible;
-    transform: scale(1);
-      width: 680px;
-}
 .navbar ul
 {
 	position: relative;
@@ -141,7 +129,6 @@
 	flex-direction: row;
     margin: 0;
     height: 100%;
-    gap: 20px;
 }
 .navbar ul li
 {
@@ -150,6 +137,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.navbar ul li.active a h1{
+    color: #eac651;
 }
 .navbar ul li a{
 	display: inline-block;
@@ -169,10 +159,6 @@
     transform: scale(1);
     transition: .4s;
 }
-.navbar ul li a:hover{
-     background-color: rgba(39, 75, 109, 0.8);
-
-}
 .navbar ul li a:hover h1{
     transform: scale(1.2);
     color: #eac651;
@@ -182,6 +168,18 @@
     .navbar ul li a{
 	padding: 0 30px;
 }
+}
+@media (max-width: 767px) {
+    .toggle-header{
+        visibility: visible;
+        right: 20px;
+    }
+}
+@media (min-width: 768px) {
+    .toggle-header{
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 @media (min-width: 768px ) and (max-width: 992px){
 .logo-header{
