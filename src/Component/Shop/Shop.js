@@ -1,7 +1,16 @@
 import './Shop.css'
+import Filter from './Filter/Filter';
+import Product from './Product/Product'
 const Shop = () => {
   return (
-    <div>Shop</div>
+    <div className="wrapper-shop">
+      <div className="container-shop">
+        <div className="content-shop">
+          <Filter />
+          <Product />
+        </div>
+      </div>
+    </div>
   )
 }
 
