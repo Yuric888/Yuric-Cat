@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
-    display: none;
+    /* display: none; */
 }
 .content-layout-grid .card-product{
     flex: 0 0 100%;

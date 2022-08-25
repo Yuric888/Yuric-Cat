@@ -1,18 +1,15 @@
-// import {createSlice} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
-// export const reducers = createSlice({
-//     name: 'cats',
-//     initialState: {
-//         search: '',
-//         status: 'All',
-//         priorities: []
-//     },
-//     reducers: {
-//         searchFilterChange: (state, action) => {
-//             state.search = action.payload;
-//         },
-//         statusFilterChange: (state, action) => {
-//             state.status = action.payload
-//         }
-//     }
-// })
+export const showReducer = createSlice({ 
+    name: 'porduct-change',
+    initialState: {
+        showLayout: false
+    },
+    reducers: {
+        changeLayout: (state, action) => {
+            state.showLayout = !state.showLayout;
+        },
+       
+    }
+})
+export const {changeLayout} = showReducer.actions

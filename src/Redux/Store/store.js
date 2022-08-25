@@ -1,11 +1,9 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// // import createSagaMiddleware from "redux-saga";
-// import catsReducer from '../Reducer/catState'
-// // const saga = createSagaMiddleware();
-// const store = configureStore({
-//     reducer: {
-//         cats: reducers
-//     }
-// })
+import { configureStore } from "@reduxjs/toolkit";
+import { showReducer } from "../Reducer/reducer";
+const store = configureStore({
+    reducer: {
+         reduce: showReducer.reducer
+    }
+})
 
-// export default store
+export default store

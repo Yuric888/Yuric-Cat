@@ -7,10 +7,10 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Layout from './Component/Layout/Layout';
 import Shop from './Component/Shop/Shop'
 import { Provider } from 'react-redux'
-// import store from './Redux/Store/store';
+import store from './Redux/store/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <Provider >
+  <Provider store={store}>
   <BrowserRouter>
   <Routes>
   <Route path="/" element={<App />}>
@@ -20,7 +20,7 @@ root.render(
   
   </Routes>
   </BrowserRouter>
-  // </Provider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
