@@ -10,14 +10,41 @@ const ContainerProduct = () => {
       <div className="container-list">
     {/* {DataProduct && DataProduct} */}
         <div className={showLayout && showLayout === true ? "content-layout-list" : "content-layout-grid"}>
-          <div className="card-product">asf</div>
-          <div className="card-product">saf</div>
-          <div className="card-product">safd</div>
-          <div className="card-product">rjhy</div>
-          <div className="card-product">jtdyj</div>
-          <div className="card-product">fdtyjn</div>
-          <div className="card-product">seht</div>
-          <div className="card-product">aerhyvgrh</div>
+          <div className="card-product">
+            <div className="card-image">
+              <img alt="cat" src={"https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+            </div>
+            <div className="card-content-grid"></div>
+            <div className="card-content-list"></div>
+          </div>
+         <div className="card-product">
+            <div className="card-image">
+              <img alt="cat" src={"https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+            </div>
+            <div className="card-content-grid"></div>
+            <div className="card-content-list"></div>
+          </div>
+          <div className="card-product">
+            <div className="card-image">
+              <img alt="cat" src={"https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+            </div>
+            <div className="card-content-grid"></div>
+            <div className="card-content-list"></div>
+          </div>
+          <div className="card-product">
+            <div className="card-image">
+              <img alt="cat" src={"https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+            </div>
+            <div className="card-content-grid"></div>
+            <div className="card-content-list"></div>
+          </div>
+          <div className="card-product">
+            <div className="card-image">
+              <img alt="cat" src={"https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+            </div>
+            <div className="card-content-grid"></div>
+            <div className="card-content-list"></div>
+          </div>
         </div>
       </div>
     </div>

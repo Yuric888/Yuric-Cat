@@ -28,9 +28,11 @@ const Header = () => {
   }
   const handleClick = (id) => {
      setCurrentPage(id)
+      setToggleNav(false)
   }
   const handleHome = () => {
     setCurrentPage(0)
+    setToggleNav(false)
   }
   return (
     <div>
