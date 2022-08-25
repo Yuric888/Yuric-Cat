@@ -6,9 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Layout from './Component/Layout/Layout';
 import Shop from './Component/Shop/Shop'
+import { Provider } from 'react-redux'
+// import store from './Redux/Store/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <Provider >
   <BrowserRouter>
   <Routes>
   <Route path="/" element={<App />}>
@@ -18,7 +20,7 @@ root.render(
   
   </Routes>
   </BrowserRouter>
-  </React.StrictMode>
+  // </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

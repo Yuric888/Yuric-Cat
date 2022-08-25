@@ -5,7 +5,8 @@ import './Header.css';
 import { Link } from "react-router-dom";
 const Header = () => {
   const [scrollState, setscrollState] = useState(false);
-  const [state, setState] = useState({clickHeaderState: false, currentPage: 0})
+  const [toggleNav, setToggleNav] = useState(false);
+  const [currentPage, setCurrentPage] = useState(-1);
   useEffect(() => {
     const handleScrollHeader = () => {
       setscrollState((scrollState) => {
@@ -23,10 +24,13 @@ const Header = () => {
     // return () => window.removeEventListener("scroll", handleScrollHeader);
   })
   const handleClickHeader = () => {
-    setState(pre => ({...pre, clickHeaderState: !state.clickHeaderState}))
+    setToggleNav(!toggleNav)
   }
   const handleClick = (id) => {
-      setState(prev => ({...prev,currentPage: id}))
+     setCurrentPage(id)
+  }
+  const handleHome = () => {
+    setCurrentPage(0)
   }
   return (
     <div>
@@ -34,17 +38,19 @@ const Header = () => {
       <div className={scrollState ? "container-header active" : "container-header"}>
         <div className="logo-header">
           <Link to="/">
+          <div onClick={handleHome}>
             <LogoYuric />
+            </div>
           </Link>
         </div> 
-        <div className={state.clickHeaderState ? "navbar active" : "navbar"}>
+        <div className={toggleNav? "navbar active" : "navbar"}>
           <ul>
           { DataHeader.map((item, idx) => {
             return(
                <li 
                key={idx}
                onClick={() => handleClick(idx)}
-               className={state.currentPage + 1 === item.id ? "active" : ""}
+               className={currentPage + 1 === item.id ? "active" : ""}
                >
                <Link to={item.href}>
                 <h1>{item.name}</h1>
@@ -55,7 +61,7 @@ const Header = () => {
           </ul>
         </div>
         <div 
-        className={state.clickHeaderState ? "toggle-header active" : "toggle-header"}
+        className={toggleNav ? "toggle-header active" : "toggle-header"}
         onClick={handleClickHeader}
         ></div> 
       </div>

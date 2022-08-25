@@ -10,8 +10,8 @@ const HeaderProduct = () => {
     <div className="wrapper-header-product">
       <div className="show-result"><p>Show to 123 result</p></div>
       <div className="button-change">
-      <ButtonList onClick={handleClick} show={!show} direction="grid" />
-      <ButtonList onClick={handleClick} show={show} direction="list" />
+      <ButtonList handleClick={handleClick} show={!show} direction="grid" />
+      <ButtonList handleClick={handleClick} show={show} direction="list" />
       </div>
     </div>
   )
