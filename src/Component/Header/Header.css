@@ -185,9 +185,6 @@
 .logo-header{
     width: 200px;
 }
-.navbar.active{
-    width: 500px;
-}
 .navbar ul li{
     gap: 10px;
 }
