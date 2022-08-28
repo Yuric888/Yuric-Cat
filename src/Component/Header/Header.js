@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import LogoYuric from '../Images_Svg/LogoYuric'
 import DataHeader from "./DataHeader";
 import './Header.css';
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 const Header = () => {
   const [scrollState, setscrollState] = useState(false);
   const [toggleNav, setToggleNav] = useState(false);
-  const [currentPage, setCurrentPage] = useState(-1);
   useEffect(() => {
     const handleScrollHeader = () => {
       setscrollState((scrollState) => {
@@ -26,12 +25,7 @@ const Header = () => {
   const handleClickHeader = () => {
     setToggleNav(!toggleNav)
   }
-  const handleClick = (id) => {
-     setCurrentPage(id)
-      setToggleNav(false)
-  }
   const handleHome = () => {
-    setCurrentPage(0)
     setToggleNav(false)
   }
   return (
@@ -51,12 +45,10 @@ const Header = () => {
             return(
                <li 
                key={idx}
-               onClick={() => handleClick(idx)}
-               className={currentPage + 1 === item.id ? "active" : ""}
                >
-               <Link to={item.href}>
+               <NavLink to={item.href}>
                 <h1>{item.name}</h1>
-                </Link>
+                </NavLink>
               </li>
             )
           })}  
