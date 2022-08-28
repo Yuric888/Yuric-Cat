@@ -12,9 +12,11 @@ const ContainerProduct = () => {
       <div className="container-list">
     {/* {DataProduct && DataProduct} */}
         <div className={showLayout && showLayout === true ? "content-layout-list" : "content-layout-grid"}>
-          <div className="card-product">
+          {DataProduct && DataProduct.map((item, idx) => {
+            return(
+            <div className="card-product" key={idx}>
             <div className="card-image">
-              <img alt="cat" src={"https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+              <img alt={item.title} src={item.url ? item.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
               <div className="card-image-button">
                 <div className="icon-plus">
                   <IconPlus color="#666" width="22" height="22"/>
@@ -25,22 +27,22 @@ const ContainerProduct = () => {
               </div>
             </div>
             <div className="card-content-grid">
-              <h1 className="card-content-title">title</h1>
+              <h1 className="card-content-title">{item.title ? item.title : ""}</h1>
               <div className="card-content-price">
-                <p>$34294&nbsp;-&nbsp;</p>
-                <p className="card-content-line-through">$43324</p>
+                <p>${item.price_2 ? `${item.price_1} - ` : item.price_1}</p>
+                <p className="card-content-line-through">{item.price_2 ? ` $${item.price_2}` : ""}</p>
               </div>
             </div>
             <div className="card-content-list">
-              <h1 className="card-content-title">title</h1>
+              <h1 className="card-content-title">{item.title ? item.title : ""}</h1>
               <div className="card-content-price">
-                <p>$34294&nbsp;-&nbsp;</p>
-                <p className="card-content-line-through">$43324</p>
+                <p>${item.price_2 ? `${item.price_1} - ` : item.price_1}</p>
+                <p className="card-content-line-through">{item.price_2 ? ` $${item.price_2}` : ""}</p>
               </div>
-              <p className="card-content-info">asdfsdf</p>
+              <p className="card-content-info">{item.content ? item.content : ""}</p>
               <div className="card-button">
               <div className="icon-shop">
-                  <IconShop color="#666" width="22" height="22" />
+                  <p>add to card</p>
                 </div>
                 <div className="icon-plus">
                   <IconPlus color="#666" width="22" height="22"/>
@@ -48,6 +50,8 @@ const ContainerProduct = () => {
               </div>
             </div>
           </div>
+            )
+          })}
         </div>
       </div>
     </div>
