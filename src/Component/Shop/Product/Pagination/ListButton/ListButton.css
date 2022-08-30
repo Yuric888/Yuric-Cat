@@ -1,0 +1,23 @@
+.pagination-button{
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+.pagination-button li{
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(126, 76, 79,.3);
+}
+.pagination-button li:hover{
+    background-color:rgba(126, 76, 79,.8);
+}
+.pagination-button li.active{
+    background-color:#7e4c4f;
+}
+.pagination-button li h1{
+    color: #0388c5;
+}

@@ -2,7 +2,14 @@ import './ListItemProduct.css';
 import IconPlus from '../../../../Images_Svg/IconPlus';
 import IconShop from '../../../../Images_Svg/IconShop';
 const ListItemProduct = ({data, showLayout}) => {
+  if(data === []){
+    return(
+      <div>Data Available</div>
+    )
+  }
   return (
+      <div className="wrapper-list">
+      <div className="container-list">
     <div className={showLayout && showLayout === true ? "content-layout-list" : "content-layout-grid"}>
           {data && data.map((item, idx) => {
             return(
@@ -45,6 +52,8 @@ const ListItemProduct = ({data, showLayout}) => {
             )
           })}
         </div>
+        </div>
+    </div>
   )
 }
 

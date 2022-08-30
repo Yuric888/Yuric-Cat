@@ -1,11 +1,15 @@
-import ContainerProduct from './ContainerProduct/ContainerProduct'
+import DataProduct from '../../Data/DataProduct';
 import HeaderProduct from './HeaderProduct/HeaderProduct'
-import './Product.css'
-const Product = () => {
+import Pagination from './Pagination/Pagination'
+import './Product.css';const Product = () => {
+  const itemPage = 9
   return (
     <div className="wrapper-product">
       <HeaderProduct />
-      <ContainerProduct />
+      <Pagination
+            itemPage={itemPage}
+            data={DataProduct ?? []}
+           />
     </div>
   )
 }

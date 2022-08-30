@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import LogoYuric from '../Images_Svg/LogoYuric'
-import DataHeader from "./DataHeader";
+import DataHeader from '../Data/DataHeader'
 import './Header.css';
 import { Link ,NavLink} from "react-router-dom";
 const Header = () => {
