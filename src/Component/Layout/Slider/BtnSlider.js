@@ -1,7 +1,7 @@
 
 import './Slider.css';
-import IconNext from '../../Images_Svg/IconNextSvg.svg';
-import IconPrev from '../../Images_Svg/IconPrevSvg.svg';
+import IconNext from '../../Images_Svg/icon-svg/IconNextSvg.svg';
+import IconPrev from '../../Images_Svg/icon-svg/IconPrevSvg.svg';
 const BtnSlider = ({moveSlide, direction, width="50", height="50", fill, className}) => {
   return (
     <button 

@@ -20,7 +20,6 @@
    .content-layout-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
    }
-
 }
 .content-layout-grid .card-content-list{
     display: none
@@ -28,7 +27,7 @@
 .content-layout-grid .card-image{
     width: 100%;
     overflow: hidden;
-    height: 200px;
+    height: 300px;
     position: relative;
 }
 .content-layout-grid .card-image img{
