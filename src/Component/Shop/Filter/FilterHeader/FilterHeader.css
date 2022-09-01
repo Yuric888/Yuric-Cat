@@ -24,8 +24,8 @@ input:focus{
      0 0 5px #0768b6;
 }
 .button-filter{
-    height: 38px;
-    width: 38px;
+    height: 42px;
+    width: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ input:focus{
     cursor: pointer;
     transition: .3s;
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
 }

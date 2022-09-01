@@ -17,7 +17,6 @@ root.render(
       <Route path="/" element={<Layout />} />
       <Route path="/shop" element={<Shop />} />
   </Route>
-  
   </Routes>
   </BrowserRouter>
   </Provider>
