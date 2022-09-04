@@ -1,12 +1,15 @@
 import './ListItemProduct.css';
 import IconPlus from '../../../../Images_Svg/IconPlus';
 import IconShop from '../../../../Images_Svg/IconShop';
+import useModal from '../../../../Modal/useModal';
 const ListItemProduct = ({data, showLayout}) => {
   if(data === []){
     return(
       <div>Data Available</div>
     )
   }
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const {toggle} = useModal();
   return (
       <div className="wrapper-list">
       <div className="container-list">
@@ -17,11 +20,11 @@ const ListItemProduct = ({data, showLayout}) => {
             <div className="card-image">
               <img alt={item.title} src={item.url ? item.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
               <div className="card-image-button">
-                <div className="icon-plus">
-                  <IconPlus color="#666" width="22" height="22"/>
+                <div className="icon-plus" onClick={toggle}>
+                  <IconPlus color="#666" width="28" height="28"/>
                 </div>
                 <div className="icon-shop">
-                  <IconShop color="#666" width="22" height="22" />
+                  <IconShop color="#666" width="28" height="28" />
                 </div>
               </div>
             </div>
@@ -43,7 +46,7 @@ const ListItemProduct = ({data, showLayout}) => {
               <div className="icon-shop">
                   <p>add to card</p>
                 </div>
-                <div className="icon-plus">
+                <div className="icon-plus" onClick={toggle}>
                   <IconPlus color="#666" width="22" height="22"/>
                 </div>
               </div>
