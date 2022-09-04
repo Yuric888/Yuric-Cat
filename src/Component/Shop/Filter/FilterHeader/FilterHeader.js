@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { changeFilter } from "../../../../Redux/Reducer/filterReducer";
 import IconSearch from "../../../Images_Svg/IconSearch"
 import './FilterHeader.css'
@@ -11,7 +11,6 @@ const FilterHeader = () => {
   }
   const handleFilter = (valueInput) => {
     dispatch(changeFilter(valueInput));
-    setValue('')
   }
   return (
     <div className="wrapper-filter-header">

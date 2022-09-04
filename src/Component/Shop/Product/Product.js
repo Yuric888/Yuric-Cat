@@ -4,7 +4,7 @@ import Pagination from './Pagination/Pagination'
 import './Product.css';
 import { useSelector } from "react-redux";
 const Product = () => {
-  const itemPage = 9;
+  const itemPage = 8;
   const state = useSelector(state => state.filter.valueSearch)
  
    const data =  DataProduct.filter((val) => {
@@ -14,8 +14,6 @@ const Product = () => {
         return val
       }
     })
-  
-  
     return (
     <div className="wrapper-product">
       <HeaderProduct />

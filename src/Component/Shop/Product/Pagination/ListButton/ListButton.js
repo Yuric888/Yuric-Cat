@@ -5,9 +5,10 @@ import { useDispatch } from 'react-redux';
 import { backPage, changePage, nextPage } from '../../../../../Redux/Reducer/reducer';
 const ListButton = ({numberPage, currentPage}) => {
 	 const dispatch = useDispatch()
+	
 	const handleChangePage = (id)=>{
     dispatch(changePage(id))
-  } 
+  	} 
   const handlePrev = ()=>{
 	if(currentPage !== 1){
 		dispatch(backPage())
@@ -21,9 +22,14 @@ const ListButton = ({numberPage, currentPage}) => {
   }
   return (
     <ul className="pagination-button">
+		{currentPage === 1 
+		? 
+		null 
+		: 
 		<li onClick={handlePrev}>
           <IconPrevPagi width="20" height="20" color="#0388c5"/>
         </li>
+		}
 				{numberPage && numberPage.length !== 0 && numberPage.map((item, index) => {
 					return(
 						<li 
@@ -36,11 +42,16 @@ const ListButton = ({numberPage, currentPage}) => {
 						</li>
 					)
 				})}
+		{currentPage === numberPage.length 
+		? 
+		null 
+		: 
 		<li onClick={handleNext}>
           <IconNextPagi width="20" height="20" color="#0388c5" />
-        </li>
+        </li>}
 	</ul> 
   )
+  
 }
 
 export default ListButton

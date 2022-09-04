@@ -18,6 +18,9 @@
 .pagination-button li.active{
     background-color:#7e4c4f;
 }
+.pagination-button li.active h1 {
+    color: white;
+}
 .pagination-button li h1{
     color: #0388c5;
 }
