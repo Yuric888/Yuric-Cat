@@ -1,16 +1,21 @@
-.overlay{
+.modal-overlay{
     width: 100vw;
     height: 100vh;
     background: rgba(0,0,0,.68);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    position: fixed;
+    inset: 0;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
 }
 .modal{
     background-color: white;
@@ -29,7 +34,7 @@
     cursor: pointer;
     color: #004b6d;
     font-weight: 800;
-    transition: 1s;
+    transition: .5s;
 }
 .modal-close:hover{
     color: #eac651;
