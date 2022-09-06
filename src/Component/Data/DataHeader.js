@@ -11,8 +11,8 @@ const DataHeader = [
     },
     {
         id: 3,
-        name: "Info",
-        href: "info"
+        name: "Cards",
+        href: "cards"
     },
 ]
 

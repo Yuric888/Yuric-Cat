@@ -8,6 +8,7 @@ import Layout from './Component/Layout/Layout';
 import Shop from './Component/Shop/Shop'
 import { Provider } from 'react-redux'
 import store from './Redux/store/store';
+import BuildCard from './Component/BuildCard/BuildCard';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
@@ -16,6 +17,7 @@ root.render(
   <Route path="/" element={<App />}>
       <Route path="/" element={<Layout />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path='/cards' element={<BuildCard />} />
   </Route>
   </Routes>
   </BrowserRouter>
