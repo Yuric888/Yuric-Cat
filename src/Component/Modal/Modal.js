@@ -22,6 +22,10 @@ const Modal = (props) =>{
                 <p>{isShowing.itemModal.price_2}</p>
               </div>
               <p>{isShowing.itemModal.content}</p>
+              <div className="add-card">
+                <p>add to card</p>
+              </div>
+              
             </div>
             {/* <div>{isShowing.itemModal.title}</div>
             <div>{isShowing.itemModal.content}</div>
