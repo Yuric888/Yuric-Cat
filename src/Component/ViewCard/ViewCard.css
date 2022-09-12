@@ -1,0 +1,26 @@
+.wrapper-view{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    z-index: 300;
+}
+.wrapper-view.active {
+    opacity: 1;
+    visibility: visible;
+}
+.container-view{
+    max-width: 500px;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    margin: 0 auto;
+    transition: .8s;
+}
+.container-view.active{
+    margin: 100px auto;
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,15 @@
+#customers{
+    width: 100%;
+    overflow-x: hidden;
+     border-collapse: collapse;
+}
+#customers tr  {
+    /* display: block; */
+    width: 100%;
+    border: 1px solid #ccc;
+}
+#customers tr td{
+    width: 20%;
+    text-align: center;
+    padding: 20px 10px;
+}

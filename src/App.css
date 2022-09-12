@@ -11,6 +11,11 @@ h1{
   color: #004b6d;
   font-weight: 600;
 }
+h3{
+  font-size: 24px;
+  color: #004b6d;
+  font-weight: 600;
+}
 p{
   font-size: 20px;
   color: #004b6d;
@@ -26,6 +31,9 @@ p{
 }
 @media (max-width: 992px) {
   h1{
+  font-size: 20px;
+}
+ h3{
   font-size: 20px;
 }
 p{
