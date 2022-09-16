@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import IconCheck from '../Images_Svg/IconCheck';
-import './ViewCard.css'
-const ViewCard = (props) => {
+import './ModalCard.css'
+const ModalCard = (props) => {
   const {state, hide} = props;
   const navigate = useNavigate();
  const Delay = (e) => {
@@ -12,10 +12,10 @@ const ViewCard = (props) => {
     },600)
 }
   return (
-    <div className={state.showViewCard ? "wrapper-view active" : "wrapper-view"}
+    <div className={state.showModalCard ? "wrapper-view active" : "wrapper-view"}
         onClick={hide}
     >
-      <div className={state.showViewCard ? "container-view active" : "container-view"}
+      <div className={state.showModalCard ? "container-view active" : "container-view"}
         onClick={e => {
           // do not close modal if anything inside modal content is clicked
           e.stopPropagation();
@@ -38,4 +38,4 @@ const ViewCard = (props) => {
   )
 }
 
-export default ViewCard
+export default ModalCard

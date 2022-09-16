@@ -3,12 +3,12 @@ import Filter from './Filter/Filter';
 import Product from './Product/Product';
 import useModal from '../Modal/useModal';
 import Modal from '../Modal/Modal';
-import ViewCard from '../ViewCard/ViewCard';
-import useCardView from '../ViewCard/useCardView';
+import ModalCard from '../ModalCard/ModalCard';
+import useModalCard from '../ModalCard/useModalCard';
 const Shop = () => {
   
   const {state, toggle} = useModal();
-  const {stateView, toggleView} = useCardView();
+  const {stateView, toggleView} = useModalCard();
   return (
     <div className="wrapper-shop">
       <div className="container-shop">
@@ -19,7 +19,7 @@ const Shop = () => {
             isShowing={state}
             hide={toggle}
           />
-          <ViewCard
+          <ModalCard
             state={stateView}
             hide={toggleView}
            />

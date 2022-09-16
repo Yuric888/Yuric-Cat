@@ -4,7 +4,7 @@ export const modalReducer = createSlice({
     name: 'modal-change',
     initialState: {
         showLModal: false,
-        showViewCard: false,
+        showModalCard: false,
         itemModal: {
              title: '',
             content: '',
@@ -27,7 +27,7 @@ export const modalReducer = createSlice({
             state.itemModal.price_2 = action.payload.price_2;
         },
         toggleViewCard: (state,action) => {
-            state.showViewCard = !state.showViewCard;
+            state.showModalCard = !state.showModalCard;
         }
         
     }

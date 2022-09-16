@@ -2,11 +2,11 @@ import './ListItemProduct.css';
 import IconPlus from '../../../../Images_Svg/IconPlus';
 import IconShop from '../../../../Images_Svg/IconShop';
 import useModal from '../../../../Modal/useModal';
-import useCardView from '../../../../ViewCard/useCardView';
+import useModalCard from '../../../../ModalCard/useModalCard';
 const ListItemProduct = ({data, showLayout}) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const {toggle} = useModal();
-  const {toggleView} = useCardView();
+  const {toggleView} = useModalCard();
   return (
       <div className="wrapper-list">
       <div className="container-list">

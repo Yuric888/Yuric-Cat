@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleViewCard } from '../../Redux/Reducer/modalReducer';
 
-const useCardView = () => {
+const useModalCard = () => {
     const stateView = useSelector(state => state.modal);
     const dispatch = useDispatch()
     const toggleView = () =>{
@@ -12,4 +12,4 @@ const useCardView = () => {
   }
 }
 
-export default useCardView
+export default useModalCard
