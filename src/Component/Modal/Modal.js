@@ -1,5 +1,6 @@
 import './Modal.css'
 import React from 'react'
+import { Link } from 'react-router-dom';
 const Modal = (props) =>{
   const {isShowing, hide} = props;
   return(
@@ -23,7 +24,9 @@ const Modal = (props) =>{
               </div>
               <p>{isShowing.itemModal.content}</p>
               <div className="add-card">
+              <Link to="/cards">
                 <p>add to card</p>
+                </Link>
               </div>
               
             </div>

@@ -99,6 +99,9 @@
 .add-card:hover p{
    color: #eac651;
 }
+.add-card a{
+    text-decoration: none;
+}
 @media (max-width: 991px){
 .modal-text{
     width: 100%;
