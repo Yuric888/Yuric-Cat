@@ -20,7 +20,7 @@ const ListItemProduct = ({data, showLayout}) => {
                 <div className="icon-plus" onClick={()=>toggle(item)}>
                   <IconPlus color="#666" width="28" height="28"/>
                 </div>
-                <div className="icon-shop" onClick={() => toggleView()}>
+                <div className="icon-shop" onClick={()=>toggleView(item)}>
                   <IconShop color="#666" width="28" height="28" />
                 </div>
               </div>
@@ -40,7 +40,7 @@ const ListItemProduct = ({data, showLayout}) => {
               </div>
               <p className="card-content-info">{item.content ? item.content : ""}</p>
               <div className="card-button">
-              <div className="icon-shop" onClick={() => toggleView()}>
+              <div className="icon-shop" onClick={() => toggleView(item)}>
                   <p>add to card</p>
                 </div>
                 <div className="icon-plus" onClick={()=>toggle(item)}>

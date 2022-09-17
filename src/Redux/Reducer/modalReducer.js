@@ -28,8 +28,22 @@ export const modalReducer = createSlice({
         },
         toggleViewCard: (state,action) => {
             state.showModalCard = !state.showModalCard;
+        },
+        addCard: (state,action) => {
+            const newCard = {
+                title: action.payload.title,
+                content: action.payload.content,
+                url: action.payload.url,
+                price_1: action.payload.price_1,
+                price_2: action.payload.price_2
+            }
+            state.cards.push(newCard);
         }
-        
     }
 })
-export const {toggleModal, changeData, toggleViewCard} = modalReducer.actions
+export const {
+                toggleModal, 
+                changeData, 
+                toggleViewCard,
+                addCard,
+                } = modalReducer.actions

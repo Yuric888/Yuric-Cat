@@ -9,7 +9,7 @@ const ModalCard = (props) => {
     hide();
     setTimeout(() => {
         navigate("/cards") //make this work
-    },600)
+    }, 600)
 }
   return (
     <div className={state.showModalCard ? "wrapper-view active" : "wrapper-view"}
@@ -27,7 +27,7 @@ const ModalCard = (props) => {
       <h1>Added to cart successfully!</h1></div>
         <div className="click-view">
         <button 
-          onClick={e => Delay(e)}
+          onClick={(e) => Delay(e)}
         >
         <p>View Card</p>
         </button>
