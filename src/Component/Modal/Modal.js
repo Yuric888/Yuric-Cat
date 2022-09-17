@@ -1,8 +1,16 @@
 import './Modal.css'
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Modal = (props) =>{
   const {isShowing, hide} = props;
+   const navigate = useNavigate();
+ const Delay = (e) => {
+    e.preventDefault();
+    hide();
+    setTimeout(() => {
+        navigate("/cards") //make this work
+    },600)
+}
   return(
     <>
       <div onClick={hide} className={isShowing.showLModal ? "modal active":"modal"}>
@@ -24,9 +32,11 @@ const Modal = (props) =>{
               </div>
               <p>{isShowing.itemModal.content}</p>
               <div className="add-card">
-              <Link to="/cards">
+              <button 
+                onClick={(e) => Delay(e)}
+              >
                 <p>add to card</p>
-                </Link>
+                </button>
               </div>
               
             </div>

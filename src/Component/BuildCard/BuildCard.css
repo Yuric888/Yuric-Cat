@@ -47,3 +47,24 @@
 .content-build h3{
     text-transform: uppercase;
 }
+.content-build button{
+    padding: 16px;
+    border: none;
+    outline: none;
+     background-color: rgba(126, 76, 79,.8);
+     text-transform: uppercase;
+     
+     border-radius: 6px;
+    cursor: pointer;
+}
+.content-build button p{
+    margin: 0;
+    color: white;
+     font-weight: 400;
+}
+.content-build button:hover{
+    background-color: rgba(126, 76, 79,1);
+}
+.content-build button:hover p{
+    color: #eac651;
+}
