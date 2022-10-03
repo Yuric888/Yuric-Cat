@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import IconGrid from '../../../../Images_Svg/IconGrid'
 import IconList from '../../../../Images_Svg/IconList'
 import './ButtonList.css'

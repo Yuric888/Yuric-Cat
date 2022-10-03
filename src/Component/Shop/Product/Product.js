@@ -7,6 +7,7 @@ const Product = () => {
   const itemPage = 8;
   const state = useSelector(state => state.filter.valueSearch)
  
+   // eslint-disable-next-line array-callback-return
    const data =  DataProduct.filter((val) => {
     if(state === ""){
       return val
