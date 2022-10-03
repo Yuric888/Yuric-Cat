@@ -10,7 +10,7 @@ const BuildCard = () => {
     e.preventDefault();
     setTimeout(() => {
         navigate("/shop") //make this work
-    },600)
+    },300)
 }
   return (
     <div className="wrapper-build">

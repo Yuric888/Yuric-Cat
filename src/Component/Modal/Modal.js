@@ -9,15 +9,13 @@ const Modal = (props) =>{
    const handleClick = (e,data) => {
       Delay(e);
       addCardModal(data);
-      console.log('data', data)
-      console.log('e', e)
    }
  const Delay = (e) => {
     e.preventDefault();
     hide();
     setTimeout(() => {
         navigate("/cards") //make this work
-    },500)
+    },300)
 }
 
 const dataItem = isShowing.itemModal

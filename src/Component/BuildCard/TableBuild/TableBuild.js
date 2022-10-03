@@ -1,6 +1,10 @@
 import './TableBuild.css'
 import IconDelete from '../../Images_Svg/IconDelete'
+import { useDispatch } from 'react-redux';
+import { deleteCard } from '../../../Redux/Reducer/modalReducer';
 const TableBuild = ({data}) => {
+  const dispatch = useDispatch();
+
   return (
      <table id="customers">
           <thead>
@@ -40,7 +44,9 @@ const TableBuild = ({data}) => {
                   <p>{item.price_2}</p>
                 </td>
                 <td>
-                  <span style={{padding: "10px", cursor:"pointer"}}>
+                  <span 
+                  onClick={()=>dispatch(deleteCard(item))}
+                  style={{padding: "10px", cursor:"pointer"}}>
                     <IconDelete width="20" height="20" color="#7e4c4f" />
                   </span>
                 </td>
