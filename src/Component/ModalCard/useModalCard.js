@@ -12,8 +12,11 @@ const useModalCard = () => {
             dispatch(toggleViewCard());
         }
     }
+    const addCardModal = (data) =>{
+      dispatch(addCard(data));
+    }
   return {
-    stateView, toggleView
+    stateView, toggleView, addCardModal
   }
 }
 

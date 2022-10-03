@@ -1,4 +1,5 @@
 import './TableBuild.css'
+import IconDelete from '../../Images_Svg/IconDelete'
 const TableBuild = ({data}) => {
   return (
      <table id="customers">
@@ -22,40 +23,29 @@ const TableBuild = ({data}) => {
             </tr>
             </thead>
             <tbody>
-            <tr>
+            {data && data.length !== 0 && data.map((item, idx) => (
+              <tr key={idx}>
                 <td>
-                  <p>Alfreds Futterkiste</p>
+                  <div className="card-image">
+                    <img src={item.url} alt={item.title} />
+                  </div>
                 </td>
                 <td>
-                  <p>Maria Anders</p>
+                  <p>{item.content}</p>
                 </td>
                 <td>
-                  <p>Germany</p>
+                  <p>{item.price_1}</p>
                 </td>
                 <td>
-                  <p>Germany</p>
+                  <p>{item.price_2}</p>
                 </td>
                 <td>
-                   <p>Germany</p>
+                  <span style={{padding: "10px", cursor:"pointer"}}>
+                    <IconDelete width="20" height="20" color="#7e4c4f" />
+                  </span>
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <p>Alfreds Futterkiste</p>
-                  </td>
-                  <td>
-                    <p>Maria Anders</p>
-                  </td>
-                  <td>
-                    <p>Germany</p>
-                  </td>
-                  <td>
-                    <p>Germany</p>
-                  </td>
-                  <td>
-                    <p>Germany</p>
-                  </td>
-            </tr>
+            ))}
         </tbody>
           </table>
   )

@@ -1,16 +1,26 @@
 import './Modal.css'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import useModalCard from '../ModalCard/useModalCard';
 const Modal = (props) =>{
   const {isShowing, hide} = props;
    const navigate = useNavigate();
+   const {addCardModal} = useModalCard();
+   const handleClick = (e,data) => {
+      Delay(e);
+      addCardModal(data);
+      console.log('data', data)
+      console.log('e', e)
+   }
  const Delay = (e) => {
     e.preventDefault();
     hide();
     setTimeout(() => {
         navigate("/cards") //make this work
-    },600)
+    },500)
 }
+
+const dataItem = isShowing.itemModal
   return(
     <>
       <div onClick={hide} className={isShowing.showLModal ? "modal active":"modal"}>
@@ -21,19 +31,19 @@ const Modal = (props) =>{
         }}>
             <span className="modal-close" onClick={hide}>&#10005;</span>
             <div className="modal-image">
-              <img alt={isShowing.itemModal.title} 
-              src={isShowing.itemModal.url ? isShowing.itemModal.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+              <img alt={dataItem.title} 
+              src={dataItem.url ? dataItem.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
             </div>
             <div className="modal-text">
-              <h1>{isShowing.itemModal.title}</h1>
+              <h1>{dataItem.title}</h1>
               <div className="modal-price">
-                <p>{isShowing.itemModal.price_1}</p>
-                <p>{isShowing.itemModal.price_2}</p>
+                <p>{dataItem.price_1}</p>
+                <p>{dataItem.price_2}</p>
               </div>
-              <p>{isShowing.itemModal.content}</p>
+              <p>{dataItem.content}</p>
               <div className="add-card">
               <button 
-                onClick={(e) => Delay(e)}
+                onClick={(e) => handleClick(e, dataItem)}
               >
                 <p>add to card</p>
                 </button>
