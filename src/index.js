@@ -7,7 +7,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Layout from './Component/Layout/Layout';
 import Shop from './Component/Shop/Shop'
 import { Provider } from 'react-redux'
-import store from './Redux/store/store';
+import store from './Redux/Store/store'
 import BuildCard from './Component/BuildCard/BuildCard';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
