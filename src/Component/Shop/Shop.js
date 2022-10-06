@@ -1,5 +1,4 @@
 import './Shop.css'
-import Filter from './Filter/Filter';
 import Product from './Product/Product';
 import useModal from '../Modal/useModal';
 import Modal from '../Modal/Modal';
@@ -19,7 +18,6 @@ const Shop = () => {
     <div className="wrapper-shop">
       <div className="container-shop">
         <div className="content-shop">
-          <Filter />
           <Product />
           <Modal
             isShowing={state}

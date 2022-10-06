@@ -1,9 +1,3 @@
 .wrapper-product{
     width: 100%;
 }
-@media(min-width:992px){
-.wrapper-product{
-    flex: 0 0 75%;
-    max-width: 75%;
-}
-}

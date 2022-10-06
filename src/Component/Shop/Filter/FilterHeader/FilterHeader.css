@@ -38,7 +38,7 @@ input:focus{
     cursor: pointer;
     transition: .3s;
     position: absolute;
-    right: 15px;
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
 }

@@ -4,13 +4,15 @@ import { getAllPost } from '../../Api_axios/postApi';
 export const filterReducer = createSlice({ 
     name: 'filter',
     initialState: {
-        valueSearch: '',
         status: 'idle', 
-        dataItem: []
+        dataItem: [],
+        dataFilter: []
     },
     reducers: {
         changeFilter: (state, action) => {
-            state.valueSearch = action.payload;
+            state.dataItem = state.dataFilter.filter((item) =>
+            item.title.toLowerCase().includes(action.payload.toLowerCase())
+    ); 
         },
        
     },
@@ -19,6 +21,7 @@ export const filterReducer = createSlice({
             state.status = 'loading';
         }).addCase(fetchPost.fulfilled, (state, action) => {
             state.dataItem = action.payload
+            state.dataFilter = action.payload
             state.status = 'idle'
         })
     }
