@@ -15,7 +15,7 @@ const ListItemProduct = ({data, showLayout}) => {
             return(
             <div className="card-product" key={idx}>
             <div className="card-image">
-              <img data-type="editable" alt={item.title} src={item.image ? `https://be-nodejs-mongodb.herokuapp.com/images/${item.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+              <img data-type="editable" alt={item.title} src={item.image ? `${process.env.REACT_APP_URL}/images/${item.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
               <div className="card-image-button">
                 <div className="icon-plus" onClick={()=>toggle(item)}>
                   <IconPlus color="#666" width="28" height="28"/>
