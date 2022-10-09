@@ -8,7 +8,7 @@ export const modalReducer = createSlice({
         itemModal: {
              title: '',
             content: '',
-            url: '',
+            image: '',
             price_1: 0,
             price_2: 0,
         },
@@ -22,7 +22,7 @@ export const modalReducer = createSlice({
         changeData: (state,action) => {
             state.itemModal.title = action.payload.title;
             state.itemModal.content = action.payload.content;
-            state.itemModal.url = action.payload.url;
+            state.itemModal.image = action.payload.image;
             state.itemModal.price_1 = action.payload.price_1;
             state.itemModal.price_2 = action.payload.price_2;
         },
@@ -33,7 +33,7 @@ export const modalReducer = createSlice({
             const newCard = {
                 title: action.payload.title,
                 content: action.payload.content,
-                url: action.payload.url,
+                image: action.payload.image,
                 price_1: action.payload.price_1,
                 price_2: action.payload.price_2
             }

@@ -31,7 +31,7 @@ const TableBuild = ({data}) => {
               <tr key={idx}>
                 <td>
                   <div className="card-image">
-                    <img src={item.url} alt={item.title} />
+                    <img data-type="editable" alt={item.title} src={item.image ? `https://be-nodejs-mongodb.herokuapp.com/images/${item.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
                   </div>
                 </td>
                 <td>
