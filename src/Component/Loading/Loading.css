@@ -1,0 +1,53 @@
+.wrapper-loading{
+    width: 100%;
+    height: 100vh;
+}
+.container-loading{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.container-loading svg{
+    width: 100%;
+	stroke-dasharray: 1000;
+	opacity: 1;
+	animation: yuric 6s linear infinite;
+	stroke: #eac651;
+	stroke-width: 1px;
+  	transform-origin: center center;
+}
+@keyframes yuric {
+	0%
+	{
+		fill: none;
+		opacity: 1;
+		stroke-dashoffset: 1000;
+	}
+	50%
+	{
+		opacity: 1;
+		fill: none;
+	}
+	60%
+	{
+		fill: #eac651;
+	}
+	85%
+	{
+		opacity: 1;
+		fill: #eac651;
+		stroke-dashoffset: 0;
+		transform: scale(1)
+	}
+	100%
+	{
+		opacity: 1;
+		fill: #eac651;
+		stroke-dashoffset: 1000;
+		transform: scale(.8)
+	}
+}

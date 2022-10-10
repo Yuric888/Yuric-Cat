@@ -19,7 +19,8 @@ export const filterReducer = createSlice({
     extraReducers: builder => {
         builder.addCase(fetchPost.pending, (state, action) => {
             state.status = 'loading';
-        }).addCase(fetchPost.fulfilled, (state, action) => {
+        })
+        .addCase(fetchPost.fulfilled, (state, action) => {
             state.dataItem = action.payload
             state.dataFilter = action.payload
             state.status = 'idle'
