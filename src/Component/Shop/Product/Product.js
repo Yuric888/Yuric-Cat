@@ -16,7 +16,14 @@ const Product = () => {
         data={state.dataItem ?? []}
         />
       :
-      <Loading />
+      state.status === 'loading' ? 
+      <Loading>
+        Please wait data loading
+      </Loading>
+      :
+      <Loading>
+        I'm sorry, no matching results found!
+      </Loading>
       }
     </div>
   )

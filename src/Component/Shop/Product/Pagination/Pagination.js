@@ -1,5 +1,4 @@
 import {  useSelector } from "react-redux"
-import NotFound from "../../../Not Found/NotFound";
 import ListButton from "./ListButton/ListButton";
 import ListItemProduct from "./ListProduct/ListItemProduct";
 
@@ -7,9 +6,6 @@ const Pagination = ({data,itemPage}) => {
   const currentPage = useSelector(state => state.reduce.currentPage)
     const showLayout = useSelector((state) => state.reduce.showLayout) 
     const pages = [];
-    if(data.length === 0){
-      return <NotFound />
-    }
     for (let i = 1; i <= Math.ceil(data.length / itemPage); i++){
       pages.push(i);
     }
