@@ -28,6 +28,7 @@ const Header = () => {
   const handleHome = () => {
     setToggleNav(false)
   }
+  
   return (
     <div>
     <header className={scrollState ? "wrapper-header active": "wrapper-header"}>
@@ -45,6 +46,7 @@ const Header = () => {
             return(
                <li 
                key={idx}
+               onClick={handleClickHeader}
                >
                <NavLink to={item.href}>
                 <h1>{item.name}</h1>
