@@ -16,9 +16,6 @@ const Pagination = ({data,itemPage}) => {
   const indexOfLastPost = currentPage * itemPage;
 	const indexOfFirstPost = indexOfLastPost - itemPage;
   const currentData = data.slice(indexOfFirstPost,indexOfLastPost);
-  
-  
-  
   return (
     <div className="wrapper-pagination">
     <ListItemProduct data={currentData} showLayout={showLayout}/>
