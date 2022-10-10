@@ -30,7 +30,7 @@ const dataItem = isShowing.itemModal
             <span className="modal-close" onClick={hide}>&#10005;</span>
             <div className="modal-image">
               <img alt={dataItem.title} 
-              src={dataItem.url ? dataItem.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+              src={dataItem.image ? `${process.env.REACT_APP_URL}/images/${dataItem.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
             </div>
             <div className="modal-text">
               <h1>{dataItem.title}</h1>
