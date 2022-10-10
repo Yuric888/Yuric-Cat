@@ -3,7 +3,6 @@ import DataBehavior from './DataBehavior.js'
 const Behavior = () => {
   return (
     <div className="wrapper-behavior">
-      
       {DataBehavior && DataBehavior.map((item, idx) => {
         return(
           <div key={idx} style={{backgroundImage: `url(${item.url})`}} className="content-behavior">
