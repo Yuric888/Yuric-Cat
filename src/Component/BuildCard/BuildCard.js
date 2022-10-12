@@ -4,7 +4,6 @@ import './BuildCard.css'
 import TableBuild from './TableBuild/TableBuild'
 const BuildCard = () => {
   const data = useSelector(state => state.modal.cards);
-  console.log('data :>> ', data);
   const navigate = useNavigate()
   const Delay = (e) => {
     e.preventDefault();

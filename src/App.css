@@ -20,6 +20,7 @@ p{
   font-size: 20px;
   color: #004b6d;
   font-weight: 400;
+  margin: 0;
 }
 @media (max-width: 500px) {
   h1{

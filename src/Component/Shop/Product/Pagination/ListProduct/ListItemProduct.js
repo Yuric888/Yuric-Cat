@@ -1,58 +1,34 @@
 import './ListItemProduct.css';
-import IconPlus from '../../../../Images_Svg/IconPlus';
-import IconShop from '../../../../Images_Svg/IconShop';
 import useModal from '../../../../Modal/useModal';
 import useModalCard from '../../../../ModalCard/useModalCard';
+import ProductGrid from './ProductGrid/ProductGrid';
+import ProductList from './ProductList/ProductList';
 const ListItemProduct = ({data, showLayout}) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const {toggle} = useModal();
   const {toggleView} = useModalCard();
   return (
-      <div className="wrapper-list">
-      <div className="container-list">
-    <div className={showLayout && showLayout === true ? "content-layout-list" : "content-layout-grid"}>
-          {data && data.map((item, idx) => {
-            return(
+    <div className="wrapper-list-product">
+      <div className={showLayout === false ? "grid" : "list"}>
+        {data && data.map((item, idx) => {
+          return(
             <div className="card-product" key={idx}>
-            <div className="card-image">
-              <img data-type="editable" alt={item.title} src={item.image ? `${process.env.REACT_APP_URL}/images/${item.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
-              <div className="card-image-button">
-                <div className="icon-plus" onClick={()=>toggle(item)}>
-                  <IconPlus color="#666" width="28" height="28"/>
-                </div>
-                <div className="icon-shop" onClick={()=>toggleView(item)}>
-                  <IconShop color="#666" width="28" height="28" />
-                </div>
-              </div>
+                {showLayout === false ? 
+                <ProductGrid
+                    data={item} 
+                    openModal={toggle}
+                    openCard={toggleView}
+                  />
+                :
+                <ProductList
+                    data={item} 
+                    openModal={toggle}
+                    openCard={toggleView}
+                  />
+                }
             </div>
-            <div className="card-content-grid">
-              <h1 className="card-content-title">{item.title ? item.title : ""}</h1>
-              <div className="card-content-price">
-                <p>${item.price_2 ? `${item.price_1} - ` : item.price_1}</p>
-                <p className="card-content-line-through">{item.price_2 ? ` $${item.price_2}` : ""}</p>
-              </div>
-            </div>
-            <div className="card-content-list">
-              <h1 className="card-content-title">{item.title ? item.title : ""}</h1>
-              <div className="card-content-price">
-                <p>${item.price_2 ? `${item.price_1} - ` : item.price_1}</p>
-                <p className="card-content-line-through">{item.price_2 ? ` $${item.price_2}` : ""}</p>
-              </div>
-              <p className="card-content-info">{item.content ? item.content : ""}</p>
-              <div className="card-button">
-              <div className="icon-shop" onClick={() => toggleView(item)}>
-                  <p>add to card</p>
-                </div>
-                <div className="icon-plus" onClick={()=>toggle(item)}>
-                  <IconPlus color="#666" width="22" height="22"/>
-                </div>
-              </div>
-            </div>
-          </div>
-            )
-          })}
-        </div>
-        </div>
+              )
+        })}
+      </div>
     </div>
   )
 }

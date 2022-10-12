@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { deleteCard } from '../../../Redux/Reducer/modalReducer';
 const TableBuild = ({data}) => {
   const dispatch = useDispatch();
-
   return (
      <table id="customers">
           <thead>
