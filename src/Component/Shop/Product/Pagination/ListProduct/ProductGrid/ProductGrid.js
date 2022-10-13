@@ -10,7 +10,7 @@ const ProducGrid = ({
   return (
     <div className="wrapper-grid">
          <div className="card-image">
-                <img data-type="editable" alt={data.title} src={data.image ? `${process.env.REACT_APP_URL}/images/${data.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+                <img data-type="editable" alt={data.title} src={data.image ? data.image.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
                 <div className="card-button">
                   <div className="icon-plus" onClick={()=>openModal(data)}>
                     <IconPlus color="#666" width="28" height="28"/>

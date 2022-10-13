@@ -30,7 +30,7 @@ const TableBuild = ({data}) => {
               <tr key={idx}>
                 <td>
                   <div className="card-image">
-                    <img data-type="editable" alt={item.title} src={item.image ? `${process.env.REACT_APP_URL}/images/${item.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+                    <img data-type="editable" alt={item.title} src={item.image ? item.image.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
                   </div>
                 </td>
                 <td>

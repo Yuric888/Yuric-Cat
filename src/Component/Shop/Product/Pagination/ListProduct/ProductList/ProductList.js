@@ -9,7 +9,7 @@ const ProductList = ({
   return (
     <div className="wrapper-list">
         <div className="card-image">
-          <img data-type="editable" alt={data.title} src={data.image ? `${process.env.REACT_APP_URL}/images/${data.image}` : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
+          <img data-type="editable" alt={data.title} src={data.image ? data.image.url : "https://raw.githubusercontent.com/ThanhTrung05/react-hook-basic-with-yuric/main/Cat-himalayan(svg).svg"} />
         </div>
         <div className="card-content">
           <h1 className="card-content-title">{data.title ? data.title : ""}</h1>
