@@ -20,7 +20,6 @@ const Modal = (props) =>{
 
 const dataItem = isShowing.itemModal
   return(
-    <>
       <div onClick={hide} className={isShowing.showLModal ? "modal active":"modal"}>
         <div className={isShowing.showLModal ? "modal-content active" : "modal-content"}  
           onClick={e => {
@@ -35,8 +34,8 @@ const dataItem = isShowing.itemModal
             <div className="modal-text">
               <h1>{dataItem.title}</h1>
               <div className="modal-price">
-                <p>{dataItem.price_1}</p>
-                <p>{dataItem.price_2}</p>
+               <p>${dataItem.price_2 ? `${dataItem.price_1} - ` : dataItem.price_1}</p>
+              <p className="card-content-line-through">{dataItem.price_2 ? ` $${dataItem.price_2}` : ""}</p>
               </div>
               <p>{dataItem.content}</p>
               <div className="add-card">
@@ -55,7 +54,6 @@ const dataItem = isShowing.itemModal
             <div>{isShowing.itemModal.price_2 ? isShowing.price_2 : null}</div> */}
         </div>
       </div>
-      </>
       );
 }
 
