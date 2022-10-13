@@ -19,6 +19,7 @@ const BuildCard = () => {
             ? 
             <>
               <h3>your cart items</h3>
+              <button className="button-buy">Buy</button>
               <TableBuild data={data} />
             </>
             :

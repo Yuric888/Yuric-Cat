@@ -15,10 +15,7 @@ const TableBuild = ({data}) => {
                 <h1>Name</h1>
               </th>
               <th>
-                <h1>Until Price</h1>
-              </th>
-              <th>
-                <h1>Amount</h1>
+                <h1>Price</h1>
               </th>
               <th>
                 <h1>Delete</h1>
@@ -34,13 +31,10 @@ const TableBuild = ({data}) => {
                   </div>
                 </td>
                 <td>
-                  <p>{item.content}</p>
+                  <p>{item.title}</p>
                 </td>
                 <td>
-                  <p>{item.price_1}</p>
-                </td>
-                <td>
-                  <p>{item.price_2}</p>
+                  <p>$ {item.price_1}</p>
                 </td>
                 <td>
                   <span 

@@ -43,6 +43,16 @@
     width: 100%;
     text-align: center;
     padding: 20px 0;
+    position: relative;
+}
+.button-buy{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+}
+.button-buy:hover{
+    color: #eac651;
 }
 .content-build h3{
     text-transform: uppercase;
@@ -51,10 +61,9 @@
     padding: 16px;
     border: none;
     outline: none;
-     background-color: rgba(126, 76, 79,.8);
-     text-transform: uppercase;
-     
-     border-radius: 6px;
+    background-color: rgba(126, 76, 79,.8);
+    text-transform: uppercase;    
+    border-radius: 6px;
     cursor: pointer;
 }
 .content-build button p{
