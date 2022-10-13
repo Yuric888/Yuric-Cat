@@ -34,8 +34,11 @@ const dataItem = isShowing.itemModal
             <div className="modal-text">
               <h1>{dataItem.title}</h1>
               <div className="modal-price">
-               <p>${dataItem.price_2 ? `${dataItem.price_1} - ` : dataItem.price_1}</p>
-              <p className="card-content-line-through">{dataItem.price_2 ? ` $${dataItem.price_2}` : ""}</p>
+               {dataItem.price_2 ? 
+                <p>$ {dataItem.price_1} - $ {dataItem.price_2}</p>
+                :
+                <p>{dataItem.price_1}</p>
+              }
               </div>
               <p>{dataItem.content}</p>
               <div className="add-card">
@@ -47,11 +50,6 @@ const dataItem = isShowing.itemModal
               </div>
               
             </div>
-            {/* <div>{isShowing.itemModal.title}</div>
-            <div>{isShowing.itemModal.content}</div>
-            <div>{isShowing.itemModal.url}</div>
-            <div>{isShowing.itemModal.price_1}</div>
-            <div>{isShowing.itemModal.price_2 ? isShowing.price_2 : null}</div> */}
         </div>
       </div>
       );

@@ -23,8 +23,11 @@ const ProducGrid = ({
           <div className="card-content-grid">
             <h1 className="card-content-title">{data.title ? data.title : ""}</h1>
             <div className="card-content-price">
-              <p>${data.price_2 ? `${data.price_1} - ` : data.price_1}</p>
-              <p className="card-content-line-through">{data.price_2 ? ` $${data.price_2}` : ""}</p>
+              {data.price_2 ? 
+                <p>$ {data.price_1} - $ {data.price_2}</p>
+                :
+                <p>{data.price_1}</p>
+              }
             </div>
           </div>
     </div>
