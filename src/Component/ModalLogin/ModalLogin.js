@@ -1,7 +1,12 @@
 
 import './ModalLogin.css'
-const ModalLogin = ({state, hide}) => {
+const ModalLogin = ({state, hide, handleRegis}) => {
+  const handleChangeRegis = () => {
+    hide();
+    handleRegis();
+  }
   return (
+    
   <div onClick={hide} className={state.isOpenLogin ? "modal-login active":"modal-login"}>
         <div className={state.isOpenLogin ? "modal-login-content active" : "modal-login-content"}  
           onClick={e => {
@@ -30,8 +35,9 @@ const ModalLogin = ({state, hide}) => {
                   <i></i>
               </div>
               <div className="links">
-                <a href='/#'>Forgot Password</a>
-                <a href='/register'>Signup</a>
+                <span
+                  onClick={handleChangeRegis}
+                >Signup</span>
               </div>
               <input type="submit" value="Login" class="form-submit" />
             </form>

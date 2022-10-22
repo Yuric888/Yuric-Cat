@@ -20,8 +20,8 @@ function App() {
       <div className="container">
         <Header />
         <Outlet /> 
-        <ModelLogin state={stateLog} hide={toggleLog} />
-        <ModalRegister state={stateLog} hide={toggleRegis}/>
+        <ModelLogin state={stateLog} hide={toggleLog} handleRegis={toggleRegis}/>
+        <ModalRegister state={stateLog} hide={toggleRegis} handleLogin={toggleLog}/>
         <footer className="footer"></footer>
       </div> 
     </div>
