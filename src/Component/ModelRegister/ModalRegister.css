@@ -45,6 +45,8 @@
     background: linear-gradient(0deg, transparent,#004b6d, #004b6d);
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
+    animation-direction: reverse;
+
 }
 .modal-register-content::after{
     content: "";
@@ -57,13 +59,14 @@
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
     animation-delay: 3s;
+    animation-direction: reverse;
 }
 @keyframes animate {
     0%{
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
     100%{
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 }
 .form-login{

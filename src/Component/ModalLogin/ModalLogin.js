@@ -37,7 +37,7 @@ const ModalLogin = ({state, hide, handleRegis}) => {
               <div className="links">
                 <span
                   onClick={handleChangeRegis}
-                >Signup</span>
+                >Sign up</span>
               </div>
               <input type="submit" value="Login" class="form-submit" />
             </form>
