@@ -42,7 +42,6 @@ export const modalReducer = createSlice({
         deleteCard: (state,action) => {
             const dataDelete = action.payload
            state.cards.splice(dataDelete, 1);
-            console.log('newData', state.cards)
         }
     }
 })

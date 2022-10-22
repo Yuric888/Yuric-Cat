@@ -27,7 +27,7 @@
     border-radius: 2px;
     padding: 16px;
     transform: translate(-50%,-80%);
-    transition: 1s;
+    transition: .6s;
     opacity: 0;
 }
 .modal-content.active{
@@ -42,7 +42,7 @@
     cursor: pointer;
     color: #004b6d;
     font-weight: 800;
-    transition: .5s;
+    transition: .3s;
     z-index: 1;
 }
 .modal-close:hover{

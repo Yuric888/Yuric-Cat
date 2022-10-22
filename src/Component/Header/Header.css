@@ -140,7 +140,7 @@
     justify-content: center;
     align-items: center;
 }
-.navbar ul li a.active h1{
+.navbar ul li a.active p{
     color: #eac651;
 }
 .navbar ul li a{
@@ -154,14 +154,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .3s;
+    transition: .2s;
     text-transform: uppercase;
 }
-.navbar ul li a h1{
+.navbar ul li a p{
     transform: scale(1);
-    transition: .4s;
+    transition: .3s;
 }
-.navbar ul li a:hover h1{
+.navbar ul li a:hover p{
     transform: scale(1.2);
     color: #eac651;
 }

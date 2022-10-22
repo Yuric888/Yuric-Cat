@@ -10,17 +10,23 @@ h1{
   font-size: 22px;
   color: #004b6d;
   font-weight: 600;
+  pointer-events: none;
+}
+h2{
+  pointer-events: none;
 }
 h3{
   font-size: 24px;
   color: #004b6d;
   font-weight: 600;
+  pointer-events: none;
 }
 p{
   font-size: 20px;
   color: #004b6d;
   font-weight: 400;
   margin: 0;
+  pointer-events: none;
 }
 @media (max-width: 500px) {
   h1{

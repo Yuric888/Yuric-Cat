@@ -3,6 +3,7 @@ import LogoYuric from '../Images_Svg/LogoYuric'
 import DataHeader from '../Data/DataHeader'
 import './Header.css';
 import { Link ,NavLink} from "react-router-dom";
+import LoginRegistUser from '../loginRegistUser/loginRegistUser'
 const Header = () => {
   const [scrollState, setscrollState] = useState(false);
   const [toggleNav, setToggleNav] = useState(false);
@@ -49,11 +50,12 @@ const Header = () => {
                onClick={handleClickHeader}
                >
                <NavLink to={item.href}>
-                <h1>{item.name}</h1>
+                <p>{item.name}</p>
                 </NavLink>
               </li>
             )
-          })}  
+          })}
+              <LoginRegistUser />
           </ul>
         </div>
         <div 

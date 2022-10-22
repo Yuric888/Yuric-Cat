@@ -12,6 +12,7 @@ const BuildCard = () => {
     },300)
 }
   return (
+    <>
     <div className="wrapper-build">
       <div className="container-build">
         <div className="content-build">
@@ -33,6 +34,8 @@ const BuildCard = () => {
         </div>
       </div>
     </div>
+    </>
+    
   )
 }
 
