@@ -1,5 +1,5 @@
-import './Register.css'
-const Register = () => {
+import './ModalRegister.css'
+const ModalRegister = () => {
   return (
     <div className="wrapper-register">
       <div className="container-register">
@@ -11,4 +11,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default ModalRegister

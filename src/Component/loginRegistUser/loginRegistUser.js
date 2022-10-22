@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useDispatch } from 'react-redux'
-import { toggleLogin } from '../../Redux/Reducer/loginReducer'
-import useModalLogin from '../ModalLogin/useModalLogin'
+import { toggleLogin, toggleRegister } from '../../Redux/Reducer/loginReducer'
 import './loginRegistUser.css'
 const loginRegistUser = () => {
    // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -9,10 +8,11 @@ const loginRegistUser = () => {
    const toggleLog = () => {
         dispatch(toggleLogin())
     }
-  const {toggleRegis} = useModalLogin
-
+    const toggleRegis = () => {
+      dispatch(toggleRegister())
+    }
   return (
-    <ul>
+    <>
         <li onClick={toggleLog}>
           <a href="#" >
             <p>Login</p>
@@ -23,7 +23,7 @@ const loginRegistUser = () => {
             <p>Register</p>
           </a>
         </li>
-    </ul>
+    </>
   )
 }
 
