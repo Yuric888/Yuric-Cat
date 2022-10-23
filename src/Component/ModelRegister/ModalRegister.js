@@ -16,8 +16,8 @@ const ModalRegister = ({state, hide, handleLogin}) => {
         }}>
             <form className="form-login">
               <span className="modal-register-close" onClick={hide}>&#10005;</span>
-              <h2 class="form-heading">Sign up</h2>
-              <div class="form-group">
+              <h2 className="form-heading">Sign up</h2>
+              <div className="form-group">
                 <input 
                   type="text" 
                   name="fistName"
@@ -26,7 +26,7 @@ const ModalRegister = ({state, hide, handleLogin}) => {
                   <span>Fist Name</span>
                   <i></i>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input 
                   type="text" 
                   name="lastName"
@@ -35,7 +35,7 @@ const ModalRegister = ({state, hide, handleLogin}) => {
                   <span>Last Name</span>
                   <i></i>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input 
                   type="text" 
                   name="email"
@@ -44,11 +44,12 @@ const ModalRegister = ({state, hide, handleLogin}) => {
                   <span>Email</span>
                   <i></i>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input 
                   type={showPass ? "text" : "password"}
                   name="password"
                   required="required"
+                  autoComplete="on"
                   />
                   <span>Password</span>
                   <div onClick={()=>setShowPass(!showPass)} className="show-password">
@@ -65,7 +66,7 @@ const ModalRegister = ({state, hide, handleLogin}) => {
                   onClick={handleChange}
                 >Login</span>
               </div>
-              <input type="submit" value="Register" class="form-submit" />
+              <input type="submit" value="Register" className="form-submit" />
             </form>
         </div>
       </div>

@@ -2,17 +2,35 @@
 import { useState } from 'react';
 import './ModalLogin.css'
 import ToggleShowEye from '../Images_Svg/ToggleShowEye'
+import { fetchLogin} from '../../Redux/Reducer/loginReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 const ModalLogin = ({state, hide, handleRegis}) => {
-  const [showPass, setShowPass] = useState(false)
+  const [showPass, setShowPass] = useState(false);
+  const [stateLogin, setStateLogin] = useState({
+    email: '', password: ''
+  })
+  const dispatch = useDispatch()
+  const stateRedux = useSelector(state => state.login);
+
   const handleChangeRegis = () => {
     hide();
     handleRegis();
   }
-  const handleChange = () => {
-
+  const handleChange = (e) => {
+    setStateLogin((state) => ({
+      ...state,
+      [e.target.name]: e.target.value
+    })
+    )
   }
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(fetchLogin(stateLogin))
+    if(stateRedux.success === true){
+      hide();
+      toast.success(stateRedux.message)
+    }
   }
   return ( 
   <div onClick={hide} className={state.isOpenLogin ? "modal-login active":"modal-login"}>
@@ -23,23 +41,26 @@ const ModalLogin = ({state, hide, handleRegis}) => {
         }}>
             <form className="form-login" onSubmit={handleSubmit}>
               <span className="modal-login-close" onClick={hide}>&#10005;</span>
-              <h2 class="form-heading">Sign in</h2>
-              <div class="form-group">
+              <h2 className="form-heading">Sign in</h2>
+              <div className="form-group">
                 <input 
                   type="text" 
                   name="email"
                   required="required"
+                  value={stateLogin.email}
                   onChange={handleChange}
                   />
                   <span>Email</span>
                   <i></i>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input 
                   type={showPass ? "text" : "password"}
                   name="password"
                   required="required"
+                  value={stateLogin.password}
                   onChange={handleChange}
+                  autoComplete="on"
                   />
                   <span>Password</span>
                   <div onClick={()=>setShowPass(!showPass)} className="show-password">
@@ -56,8 +77,9 @@ const ModalLogin = ({state, hide, handleRegis}) => {
                   onClick={handleChangeRegis}
                 >Sign up</span>
               </div>
-              <input type="submit" value="Login" class="form-submit" />
+              <input type="submit" value="Login" className="form-submit" />
             </form>
+            
         </div>
       </div>
    
