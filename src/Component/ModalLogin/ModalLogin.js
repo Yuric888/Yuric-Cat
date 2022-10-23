@@ -39,7 +39,7 @@ const ModalLogin = ({state, hide, handleRegis}) => {
           // do not close modal if anything inside modal content is clicked
           e.stopPropagation();
         }}>
-            <form className="form-login" onSubmit={handleSubmit}>
+            <form className="form-login">
               <span className="modal-login-close" onClick={hide}>&#10005;</span>
               <h2 className="form-heading">Sign in</h2>
               <div className="form-group">
@@ -77,7 +77,7 @@ const ModalLogin = ({state, hide, handleRegis}) => {
                   onClick={handleChangeRegis}
                 >Sign up</span>
               </div>
-              <input type="submit" value="Login" className="form-submit" />
+              <input onClick={handleSubmit} type="submit" value="Login" className="form-submit" />
             </form>
             
         </div>

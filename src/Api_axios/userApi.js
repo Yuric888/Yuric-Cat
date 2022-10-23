@@ -6,4 +6,10 @@ const LoginUser = (data) => {
 const LoginAdmin = (data) => {
     return axios.post(`${url}/user/login-admin`, data);
 }
-export {LoginUser, LoginAdmin};
+const RegisterUser = (data) => {
+  return axios.post(`${url}/user/register-user`, data)
+}
+const RegisterAdmin = (data) => {
+  return axios.post(`${url}/user/register-admin`, data)
+}
+export {LoginUser, LoginAdmin, RegisterUser, RegisterAdmin};

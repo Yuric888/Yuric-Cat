@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { LoginAdmin, LoginUser, registerUser } from '../../Api_axios/userApi';
+import { LoginAdmin, LoginUser, RegisterUser} from '../../Api_axios/userApi';
 
 export const loginReducer = createSlice({ 
     name: 'login-change',
@@ -31,7 +31,6 @@ export const loginReducer = createSlice({
             state.status = 'loading';
         })
         .addCase(fetchLogin.fulfilled, (state, action) => {
-            console.log('action :>> ', action);
             state.message = action.payload.message
             state.success = action.payload.success
             state.firstName = action.payload.firstName
@@ -43,11 +42,9 @@ export const loginReducer = createSlice({
             state.status = 'idle'
         })
         .addCase(fetchLogin.rejected, (state, action) => {
-            console.log('action :>> ', action);
             state.message = action.payload.message
             state.success = action.payload.success
             state.status = 'idle'
-            console.log('state :>> ', state);
         })
     }
 })
@@ -61,6 +58,7 @@ export const fetchLogin = createAsyncThunk('post/fetchLogin', async (data,{ reje
         return rejectWithValue(err.response.data)
     }
 })
+
 export const {
                toggleLogin,
                toggleRegister
