@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { LoginAdmin, LoginUser, RegisterUser} from '../../Api_axios/userApi';
+import { RegisterUser} from '../../Api_axios/userApi';
 
 export const registerReducer = createSlice({ 
     name: 'login-change',
@@ -33,9 +33,7 @@ export const fetchRegister = createAsyncThunk('post/fetchRegister', async (data,
     try{
            let res = await RegisterUser(data) 
             return res.data
-        
     }catch(err){
-        console.log('err :>> ', err);
         toast.error(err.response.data.message)
         return rejectWithValue(err.response.data)
     }

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './ModalLogin.css'
 import ToggleShowEye from '../Images_Svg/ToggleShowEye'
 import { fetchLogin} from '../../Redux/Reducer/loginReducer';
@@ -12,14 +12,20 @@ const ModalLogin = ({state, hide, handleRegis}) => {
   })
   const dispatch = useDispatch()
   const stateRedux = useSelector(state => state.login);
-
+  useEffect(() => {
+    if(stateRedux.success === true){
+      toast.success(stateRedux.message)
+      hide();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[stateRedux.success])
   const handleChangeRegis = () => {
     hide();
     handleRegis();
   }
   const handleChange = (e) => {
-    setStateLogin((state) => ({
-      ...state,
+    setStateLogin((data) => ({
+      ...data,
       [e.target.name]: e.target.value
     })
     )
@@ -27,10 +33,6 @@ const ModalLogin = ({state, hide, handleRegis}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchLogin(stateLogin))
-    if(stateRedux.success === true){
-      hide();
-      toast.success(stateRedux.message)
-    }
   }
   return ( 
   <div onClick={hide} className={state.isOpenLogin ? "modal-login active":"modal-login"}>
@@ -39,7 +41,7 @@ const ModalLogin = ({state, hide, handleRegis}) => {
           // do not close modal if anything inside modal content is clicked
           e.stopPropagation();
         }}>
-            <form className="form-login">
+            <form className="form-login" onSubmit={handleSubmit}>
               <span className="modal-login-close" onClick={hide}>&#10005;</span>
               <h2 className="form-heading">Sign in</h2>
               <div className="form-group">
@@ -77,7 +79,7 @@ const ModalLogin = ({state, hide, handleRegis}) => {
                   onClick={handleChangeRegis}
                 >Sign up</span>
               </div>
-              <input onClick={handleSubmit} type="submit" value="Login" className="form-submit" />
+              <input type="submit" value="Login" className="form-submit" />
             </form>
             
         </div>

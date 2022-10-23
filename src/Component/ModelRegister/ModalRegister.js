@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { fetchRegister } from '../../Redux/Reducer/registerReducer';
@@ -11,6 +11,14 @@ const ModalRegister = ({state, hide, handleLogin}) => {
   })
   const dispatch = useDispatch();
   const stateRedux = useSelector(state => state.register)
+  useEffect(() => {
+    if(stateRedux.success === true){
+      handleChangeLogin();
+      toast.success(stateRedux.message)
+    }
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[stateRedux.success])
   const handleChangeLogin = () => {
     hide();
     handleLogin();
@@ -25,10 +33,6 @@ const ModalRegister = ({state, hide, handleLogin}) => {
    const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchRegister(stateRegis))
-    if(stateRedux.success === true){
-      handleChangeLogin();
-      toast.success(stateRedux.message)
-    }
   }
   return (
     <div onClick={hide} className={state.isOpenRegister ? "modal-register active":"modal-register"}>
@@ -36,8 +40,8 @@ const ModalRegister = ({state, hide, handleLogin}) => {
           onClick={e => {
           // do not close modal if anything inside modal content is clicked
           e.stopPropagation();
-        }}>
-            <form className="form-login" >
+        }}>      
+            <form className="form-login" onSubmit={handleSubmit}>
               <span className="modal-register-close" onClick={hide}>&#10005;</span>
               <h2 className="form-heading">Sign up</h2>
               <div className="form-group">
@@ -97,7 +101,7 @@ const ModalRegister = ({state, hide, handleLogin}) => {
                   onClick={handleChangeLogin}
                 >Login</span>
               </div>
-              <input onClick={handleSubmit} type="submit" value="Register" className="form-submit" />
+              <input type="submit" value="Register" className="form-submit" />
             </form>
         </div>
       </div>

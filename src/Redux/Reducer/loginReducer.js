@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { LoginAdmin, LoginUser, RegisterUser} from '../../Api_axios/userApi';
+import { LoginAdmin, LoginUser} from '../../Api_axios/userApi';
 
 export const loginReducer = createSlice({ 
     name: 'login-change',

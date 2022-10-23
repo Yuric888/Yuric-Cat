@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const dispatch = useDispatch()
-  const stateLog = useSelector((state)=> state.login)
+  const stateRedux = useSelector((state)=> state)
   const toggleLog = () => {
     dispatch(toggleLogin())
   }
@@ -22,8 +22,8 @@ function App() {
       <div className="container">
         <Header />
         <Outlet /> 
-        <ModelLogin state={stateLog} hide={toggleLog} handleRegis={toggleRegis}/>
-        <ModalRegister state={stateLog} hide={toggleRegis} handleLogin={toggleLog}/>
+        <ModelLogin state={stateRedux.login} hide={toggleLog} handleRegis={toggleRegis}/>
+        <ModalRegister state={stateRedux.login} hide={toggleRegis} handleLogin={toggleLog}/>
         <ToastContainer />
         <footer className="footer"></footer>
       </div> 
