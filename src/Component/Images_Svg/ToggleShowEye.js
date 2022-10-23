@@ -1,7 +1,7 @@
 import React from 'react'
 import IconEyeClose from './IconEyeClose'
 import IconEyeShow from './IconEyeShow'
-const toggleShowEye = ({show=true, width, height, color}) => {
+const ToggleShowEye = ({show=true, width, height, color}) => {
   return (
     <>
    { show === true ? 
@@ -12,4 +12,4 @@ const toggleShowEye = ({show=true, width, height, color}) => {
   )
 }
 
-export default toggleShowEye;
+export default ToggleShowEye;
