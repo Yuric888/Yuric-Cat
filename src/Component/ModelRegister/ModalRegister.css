@@ -168,6 +168,12 @@
 .modal-register .links span:hover{
     text-shadow: 0 0 5px;
 }
+.modal-register .show-password{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 20;
+}
 
 .modal-register input[type="submit"]{
     border: none;

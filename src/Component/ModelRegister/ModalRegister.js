@@ -1,5 +1,8 @@
+import { useState } from 'react';
+import ToggleShowEye from '../Images_Svg/ToggleShowEye';
 import './ModalRegister.css'
 const ModalRegister = ({state, hide, handleLogin}) => {
+  const [showPass, setShowPass] = useState(false)
   const handleChange = () => {
     hide();
     handleLogin();
@@ -43,11 +46,18 @@ const ModalRegister = ({state, hide, handleLogin}) => {
               </div>
               <div class="form-group">
                 <input 
-                  type="password" 
+                  type={showPass ? "text" : "password"}
                   name="password"
                   required="required"
                   />
                   <span>Password</span>
+                  <div onClick={()=>setShowPass(!showPass)} className="show-password">
+                    <ToggleShowEye show={showPass} 
+                      width="36"
+                      height="22"
+                      color="#555353"
+                    />
+                  </div>
                   <i></i>
               </div>
               <div className="links">

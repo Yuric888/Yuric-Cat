@@ -169,6 +169,12 @@
     color: #45f3ff;
     text-shadow: 0 0 5px;
 }
+.modal-login .show-password{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 20;
+}
 .modal-login input[type="submit"]{
     border: none;
     outline: none;
