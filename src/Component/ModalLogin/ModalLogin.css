@@ -159,8 +159,9 @@
 .modal-login .links span {
     margin: 20px 0;
     font-size: 18px;
-   color: #45f3ff;
+    color: #45f3ff;
     text-decoration: none;
+    cursor: pointer;
 }
 .modal-login .links span:hover,
 .modal-login .links span:nth-child(2)
