@@ -18,7 +18,7 @@
 }
 .modal-login-content{
     width: 95vw;
-    height: 70vh;
+    height: 60vh;
     position: relative;
     top: 50%;
     left: 50%;
@@ -44,7 +44,7 @@
     height: 100%;
     background: linear-gradient(0deg, transparent,#004b6d, #004b6d);
     animation: animate 6s linear infinite;
-    transform-origin: bottom right;
+    transform-origin: bottom right; 
 }
 .modal-login-content::after{
     content: "";
@@ -76,6 +76,10 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    overflow-y: scroll;
+}
+.form-login::-webkit-scrollbar {
+    display: none;
 }
 .modal-login-close{
     position: absolute;
@@ -152,16 +156,17 @@
     display: flex;
     justify-content: space-between; 
 }
-.links a {
+.links span {
     margin: 20px 0;
     font-size: 18px;
     color: #8f8f8f;
     text-decoration: none;
 }
-.links a:hover,
-.links a:nth-child(2)
+.links span:hover,
+.links span:nth-child(2)
  {
     color: #45f3ff;
+    text-shadow: 0 0 5px;
 }
 input[type="submit"]{
     border: none;
