@@ -68,7 +68,7 @@
         transform: rotate(0deg);
     }
 }
-.form-login{
+.modal-register .form-login{
     position: absolute;
     inset: 2px;
     background-color: #28292d;
@@ -80,7 +80,7 @@
     gap: 40px;
     overflow-y: scroll;
 }
-.form-login::-webkit-scrollbar {
+.modal-register .form-login::-webkit-scrollbar {
     display: none;
 }
 .modal-register-close{
@@ -99,17 +99,17 @@
     transform: scale(1.2) rotate(90deg);
 }
 
-.form-login h2 {
+.modal-register .form-login h2 {
     color: #45f3ff;
     font-weight: 500;
     text-align: center;
     letter-spacing: 3px;
 }
-.form-group{
+.modal-register .form-group{
     position: relative;
     width: 100%;
 }
-.form-group input{
+.modal-register .form-group input{
     position: relative;
     width: 100%;
     padding: 20px 10px 10px;
@@ -121,7 +121,7 @@
     letter-spacing: 1px;
     z-index: 10;
 }
-.form-group span {
+.modal-register .form-group span {
     position: absolute;
     left: 0;
     padding: 20px 10px 10px;
@@ -132,13 +132,13 @@
     transition: .3s;
 
 }
-.form-group input:valid ~ span,
-.form-group input:focus ~ span {
+.modal-register .form-group input:valid ~ span,
+.modal-register .form-group input:focus ~ span {
     color: #45f3ff;
     transform: translateX(-10px) translateY(-34px);
     font-size: 16px;
 }
-.form-group i{
+.modal-register .form-group i{
     position: absolute;
     left: 0;
     bottom: 0;
@@ -150,35 +150,39 @@
     pointer-events: none;
     z-index: 9;
 }
-.form-group input:valid ~ i,
-.form-group input:focus ~ i{
+.modal-register .form-group input:valid ~ i,
+.modal-register .form-group input:focus ~ i{
     height:44px;
 }
-.links{
+.modal-register .links{
     display: flex;
     justify-content: flex-end;
 }
-.links span {
+.modal-register .links span {
     margin: 20px 0;
     font-size: 18px;
     color: #45f3ff;
     text-decoration: none;
     cursor: pointer;
 }
+.modal-register .links span:hover{
+    text-shadow: 0 0 5px;
+}
 
-input[type="submit"]{
+.modal-register input[type="submit"]{
     border: none;
     outline: none;
-    background-color: rgba(69, 243, 255,.9);
+    background-color: rgba(69, 243, 255,1);
     padding: 15px 25px;
     width: 150px;
+    height: 50px;
     border-radius: 4px;
     margin: 0 auto 0;
     font-weight: 600;
     cursor: pointer;
 }
-input[type="submit"]:hover{
-     background-color: rgba(69, 243, 255,1);
+.modal-register input[type="submit"]:hover{
+     background-color: rgba(69, 243, 255,.6);
     color: #eac651;
     }
 @media (min-width: 540px) and (max-width: 767px) {
