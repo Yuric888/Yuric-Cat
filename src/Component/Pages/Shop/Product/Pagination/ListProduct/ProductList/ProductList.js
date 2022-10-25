@@ -17,7 +17,7 @@ const ProductList = ({
             {data.price_2 ? 
                 <p>$ {data.price_1} - $ {data.price_2}</p>
                 :
-                <p>{data.price_1}</p>
+                <p>$ {data.price_1}</p>
               }
           </div>
           <p className="card-content-info">{data.content ? data.content : ""}</p>

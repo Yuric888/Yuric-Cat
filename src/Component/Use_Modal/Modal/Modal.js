@@ -37,7 +37,7 @@ const dataItem = isShowing.itemModal
                {dataItem.price_2 ? 
                 <p>$ {dataItem.price_1} - $ {dataItem.price_2}</p>
                 :
-                <p>{dataItem.price_1}</p>
+                <p>$ {dataItem.price_1}</p>
               }
               </div>
               <p>{dataItem.content}</p>

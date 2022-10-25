@@ -26,7 +26,7 @@ const ProducGrid = ({
               {data.price_2 ? 
                 <p>$ {data.price_1} - $ {data.price_2}</p>
                 :
-                <p>{data.price_1}</p>
+                <p>$ {data.price_1}</p>
               }
             </div>
           </div>
