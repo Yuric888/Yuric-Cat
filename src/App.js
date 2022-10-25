@@ -1,12 +1,12 @@
 import './App.css';
 import Header  from './Component/Header/Header';
 import {Outlet} from 'react-router-dom'
-import ModelLogin from './Component/ModalLogin/ModalLogin';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleLogin, toggleRegister } from './Redux/Reducer/loginReducer';
-import ModalRegister from './Component/ModelRegister/ModalRegister';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ModelLogin from './Component/Use_Modal/ModalLogin/ModalLogin'
+import ModalRegister from './Component/Use_Modal/ModelRegister/ModalRegister'
 function App() {
   const dispatch = useDispatch()
   const stateRedux = useSelector((state)=> state)
