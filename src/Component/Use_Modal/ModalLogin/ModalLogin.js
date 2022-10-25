@@ -5,6 +5,7 @@ import ToggleShowEye from '../../Images_Svg/ToggleShowEye'
 import { fetchLogin} from '../../../Redux/Reducer/loginReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import ModalLoading from '../ModalLoading/ModalLoading';
 const ModalLogin = ({state, hide, handleRegis}) => {
   const [showPass, setShowPass] = useState(false);
   const [stateLogin, setStateLogin] = useState({
@@ -18,7 +19,12 @@ const ModalLogin = ({state, hide, handleRegis}) => {
       hide();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[stateRedux.success])
+  },[stateRedux.success]);
+  if(stateRedux.status ==='loading'){
+    return (
+     <ModalLoading />
+    )
+  }
   const handleChangeRegis = () => {
     hide();
     handleRegis();
