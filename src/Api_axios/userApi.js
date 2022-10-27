@@ -2,7 +2,6 @@ import axios from "axios";
 const url = process.env.REACT_APP_URL
 
 const LoginUser = (data) => {
-  console.log('data', data)
   return axios.post(`${url}/user/login`, data);
 }
 const RegisterUser = (data) => {

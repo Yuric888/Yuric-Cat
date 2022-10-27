@@ -20,4 +20,5 @@
 }
 .modal-loading-content .container-loading{
     background-color: #88b1b8eb;
+    border-radius: 20px;
 }

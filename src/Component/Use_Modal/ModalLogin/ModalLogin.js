@@ -1,5 +1,5 @@
 
-import {  useState } from 'react';
+import {  useEffect, useState } from 'react';
 import './ModalLogin.css'
 import ToggleShowEye from '../../Images_Svg/ToggleShowEye'
 import { fetchLogin} from '../../../Redux/Reducer/loginReducer';
@@ -13,6 +13,13 @@ const ModalLogin = ({state, hide, handleRegis}) => {
   })
   const dispatch = useDispatch()
   const stateRedux = useSelector(state => state.login);
+  useEffect(() => {
+    if(stateRedux.success === true){
+      handleValue()
+    }
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[stateRedux.success]);
   if(stateRedux.status ==='loading'){
     return (
      <ModalLoading />
@@ -26,6 +33,13 @@ const ModalLogin = ({state, hide, handleRegis}) => {
     setStateLogin((data) => ({
       ...data,
       [e.target.name]: e.target.value
+    })
+    )
+  }
+  const handleValue = () => {
+    setStateLogin((state) => ({
+      ...state,
+      email: '', password: '',
     })
     )
   }

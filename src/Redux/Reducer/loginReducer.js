@@ -8,7 +8,7 @@ export const loginReducer = createSlice({
     initialState: {
         isOpenLogin: false,
         isOpenRegister: false,
-        status: 'idle',
+        status: 'loading',
         message: null,
         success: false,
         userDetails: null,
