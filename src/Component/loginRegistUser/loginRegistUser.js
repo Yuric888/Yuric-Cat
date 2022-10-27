@@ -9,6 +9,7 @@ const loginRegistUser = () => {
    // eslint-disable-next-line react-hooks/rules-of-hooks
    const stateView = useSelector(state => state.login)
    const {userDetails} = stateView
+   console.log('userDetails', userDetails)
   //  let axiosJWT = createAxios(userDetails, dispatch)
    // eslint-disable-next-line react-hooks/rules-of-hooks
    const navigate = useNavigate()
