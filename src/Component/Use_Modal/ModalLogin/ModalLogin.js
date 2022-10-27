@@ -1,10 +1,10 @@
 
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import './ModalLogin.css'
 import ToggleShowEye from '../../Images_Svg/ToggleShowEye'
 import { fetchLogin} from '../../../Redux/Reducer/loginReducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import ModalLoading from '../ModalLoading/ModalLoading';
 const ModalLogin = ({state, hide, handleRegis}) => {
   const [showPass, setShowPass] = useState(false);
@@ -13,13 +13,6 @@ const ModalLogin = ({state, hide, handleRegis}) => {
   })
   const dispatch = useDispatch()
   const stateRedux = useSelector(state => state.login);
-  useEffect(() => {
-    if(stateRedux.success === true){
-      toast.success(stateRedux.message)
-      hide();
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[stateRedux.success]);
   if(stateRedux.status ==='loading'){
     return (
      <ModalLoading />
@@ -39,12 +32,12 @@ const ModalLogin = ({state, hide, handleRegis}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchLogin(stateLogin))
+     hide();
   }
   return ( 
   <div onClick={hide} className={state.isOpenLogin ? "modal-login active":"modal-login"}>
         <div className={state.isOpenLogin ? "modal-login-content active" : "modal-login-content"}  
           onClick={e => {
-          // do not close modal if anything inside modal content is clicked
           e.stopPropagation();
         }}>
             <form className="form-login" onSubmit={handleSubmit}>

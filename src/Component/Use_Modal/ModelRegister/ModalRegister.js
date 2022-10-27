@@ -7,8 +7,9 @@ import './ModalRegister.css';
 import ModalLoading from '../ModalLoading/ModalLoading'
 const ModalRegister = ({state, hide, handleLogin}) => {
   const [showPass, setShowPass] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const [stateRegis, setStateRegis] = useState({
-    email: '', password: '', firstName: '', lastName: '',
+    email: '', password: '',confirmPassword: '', firstName: '', lastName: '',
   })
   const dispatch = useDispatch();
   const stateRedux = useSelector(state => state.register)
@@ -16,6 +17,7 @@ const ModalRegister = ({state, hide, handleLogin}) => {
     if(stateRedux.success === true){
       handleChangeLogin();
       toast.success(stateRedux.message)
+      handleValue()
     }
     
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,9 +38,39 @@ const ModalRegister = ({state, hide, handleLogin}) => {
     })
     )
   }
+   const handleValue = (e) => {
+    setStateRegis((state) => ({
+      ...state,
+      email: '', password: '', confirmPassword: '', firstName: '', lastName: '',
+    })
+    )
+  }
    const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fetchRegister(stateRegis))
+    if(validateUser() === true){
+      dispatch(fetchRegister(stateRegis))
+    }
+  }
+  const validateUser = ()=> {
+    const  {email, password,confirmPassword} = stateRegis
+    if(email.length < 6 ){
+      toast.error("Email needs at least 6 characters")
+      return false
+    }
+    const partern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+    if(!email.match(partern)  ){
+      toast.error("Email needs right form!")
+      return false
+    }
+    if (password.length < 6){
+      toast.error("Password must be at least 6 characters!");
+      return false
+    }
+    if(password !== confirmPassword){
+      toast.error("Password and confirm password must be the same!")
+      return false;
+    }
+    return true
   }
   return (
     <div onClick={hide} className={state.isOpenRegister ? "modal-register active":"modal-register"}>
@@ -95,6 +127,25 @@ const ModalRegister = ({state, hide, handleLogin}) => {
                   <span>Password</span>
                   <div onClick={()=>setShowPass(!showPass)} className="show-password">
                     <ToggleShowEye show={showPass} 
+                      width="36"
+                      height="22"
+                      color="#555353"
+                    />
+                  </div>
+                  <i></i>
+              </div>
+              <div className="form-group">
+                <input 
+                  type={showConfirm ? "text" : "password"}
+                  name="confirmPassword"
+                  required="required"
+                  autoComplete="on"
+                  value={stateRegis.confirmPassword}
+                  onChange={handleChange}
+                  />
+                  <span>Confirm Password</span>
+                  <div onClick={()=>setShowConfirm(!showConfirm)} className="show-password">
+                    <ToggleShowEye show={showConfirm} 
                       width="36"
                       height="22"
                       color="#555353"

@@ -1,5 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
+import { refreshToken } from '../../Api_axios/axiosJWT';
 import {LoginUser} from '../../Api_axios/userApi';
 
 export const loginReducer = createSlice({ 
@@ -8,14 +9,9 @@ export const loginReducer = createSlice({
         isOpenLogin: false,
         isOpenRegister: false,
         status: 'idle',
-        message: '',
+        message: null,
         success: false,
-        firstName: '',
-        lastName: '',
-        token: '',
-        expiresIn: 0,
-        email: '',
-        role: ''
+        userDetails: null,
     },
     reducers: {
        toggleLogin: (state) => {
@@ -23,7 +19,13 @@ export const loginReducer = createSlice({
        },
        toggleRegister: (state) => {
         state.isOpenRegister = !state.isOpenRegister;
-       }
+       },
+       logoutUser: (state) => {
+            state.userDetails = null
+            state.message = null
+            state.success= false
+            toast.success("Log out successfully!")
+        }
     },
      extraReducers: builder => {
         builder
@@ -32,14 +34,10 @@ export const loginReducer = createSlice({
         })
         .addCase(fetchLogin.fulfilled, (state, action) => {
             state.message = action.payload.message
-            state.success = action.payload.success
-            state.firstName = action.payload.firstName
-            state.lastName = action.payload.lastName
-            state.token = action.payload.token
-            state.expiresIn = action.payload.expiresIn
-            state.email = action.payload.email
-            state.role = action.payload.role
+            state.success = action.payload.success 
+            state.userDetails = action.payload.data
             state.status = 'idle'
+            toast.success(state.message)
         })
         .addCase(fetchLogin.rejected, (state, action) => {
             state.message = action.payload.message
@@ -52,6 +50,16 @@ export const fetchLogin = createAsyncThunk('post/fetchLogin', async (data,{ reje
     try{
            let res = await LoginUser(data) 
             return res.data
+    }catch(err){
+        toast.error(err.response.data.message)
+        return rejectWithValue(err.response.data)
+    }
+})
+
+export const fetchRefreshToken = createAsyncThunk('post/fetchRefreshToken', async ({ rejectWithValue }) => {
+    try{
+           let res = await refreshToken() 
+            return res.data
         
     }catch(err){
         toast.error(err.response.data.message)
@@ -61,5 +69,6 @@ export const fetchLogin = createAsyncThunk('post/fetchLogin', async (data,{ reje
 
 export const {
                toggleLogin,
-               toggleRegister
+               toggleRegister,
+               logoutUser,
                 } = loginReducer.actions

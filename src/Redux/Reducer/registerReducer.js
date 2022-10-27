@@ -9,8 +9,6 @@ export const registerReducer = createSlice({
         message: '',
         success: false,
     },
-    reducers: {
-    },
      extraReducers: builder => {
         builder
         .addCase(fetchRegister.pending, (state) => {
@@ -38,5 +36,4 @@ export const fetchRegister = createAsyncThunk('post/fetchRegister', async (data,
         return rejectWithValue(err.response.data)
     }
 })
-export const {
-                } = registerReducer.actions
+// export const { } = registerReducer.actions

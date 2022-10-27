@@ -1,15 +1,16 @@
 import axios from "axios";
 const url = process.env.REACT_APP_URL
+
 const LoginUser = (data) => {
-  return axios.post(`${url}/user/login-user`, data);
-}
-const LoginAdmin = (data) => {
-    return axios.post(`${url}/user/login-admin`, data);
+  console.log('data', data)
+  return axios.post(`${url}/user/login`, data);
 }
 const RegisterUser = (data) => {
-  return axios.post(`${url}/user/register-user`, data)
+  return axios.post(`${url}/user/register`, data)
 }
-const RegisterAdmin = (data) => {
-  return axios.post(`${url}/user/register-admin`, data)
+const LogoutUser = (accessToken, axiosJWT)=> {
+  return axiosJWT.post(`${url}/user/logout`,{
+    headers: {token: `Bearer ${accessToken}`}
+  })
 }
-export {LoginUser, LoginAdmin, RegisterUser, RegisterAdmin};
+export {LoginUser, RegisterUser, LogoutUser};

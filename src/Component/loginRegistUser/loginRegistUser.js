@@ -1,27 +1,40 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleLogin, toggleRegister } from '../../Redux/Reducer/loginReducer'
+import { useNavigate } from 'react-router-dom'
+import {  logoutUser, toggleLogin, toggleRegister } from '../../Redux/Reducer/loginReducer'
 import './loginRegistUser.css'
 const loginRegistUser = () => {
    // eslint-disable-next-line react-hooks/rules-of-hooks
    const dispatch = useDispatch()
    // eslint-disable-next-line react-hooks/rules-of-hooks
    const stateView = useSelector(state => state.login)
-   const {firstName, lastName, success} = stateView
+   const {userDetails} = stateView
+  //  let axiosJWT = createAxios(userDetails, dispatch)
+   // eslint-disable-next-line react-hooks/rules-of-hooks
+   const navigate = useNavigate()
    const toggleLog = () => {
         dispatch(toggleLogin())
     }
     const toggleRegis = () => {
       dispatch(toggleRegister())
     }
+    const handleLogout = () => {
+      dispatch(logoutUser())
+      navigate('/')
+    }
   return (
     <>
-    {success === true && firstName !== "" && lastName !== ""
+    {userDetails !== null
         ?
         <>
-          <li>
+          <li style={{pointerEvents: "none"}}>
             <a >
-              <p style={{textTransform: "none"}}>Hi {firstName} {lastName}!</p>
+              <p style={{textTransform: "none"}}>Hi {userDetails?.firstName}!</p>
+            </a>
+          </li>
+          <li onClick={handleLogout}>
+            <a >
+              <p style={{textTransform: "none"}}>Logout</p>
             </a>
           </li>
         </>

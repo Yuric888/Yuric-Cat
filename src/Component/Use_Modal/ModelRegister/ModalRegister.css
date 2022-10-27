@@ -132,6 +132,7 @@ input:-webkit-autofill:active  {
 .modal-register .form-group span {
     position: absolute;
     left: 0;
+    top: -4px;
     padding: 20px 10px 10px;
     font-size: 18px;
     color: #8f8f8f;
@@ -143,7 +144,7 @@ input:-webkit-autofill:active  {
 .modal-register .form-group input:valid ~ span,
 .modal-register .form-group input:focus ~ span {
     color: #45f3ff;
-    transform: translateX(-10px) translateY(-44px);
+    transform: translateX(-10px) translateY(-42px);
     font-size: 16px;
 }
 .modal-register .form-group i{
