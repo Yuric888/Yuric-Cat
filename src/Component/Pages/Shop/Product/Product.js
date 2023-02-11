@@ -12,7 +12,11 @@ const Product = () => {
       {state.status === "idle" && state.dataItem.length > 0 ? (
         <Pagination itemPage={itemPage} data={state.dataItem ?? []} />
       ) : state.status === "loading" ? (
-        <Loading>Please wait data loading</Loading>
+        <Loading>
+          Please wait data loading... <br />
+          You can help me open Api here:
+          https://nodejs-with-yuric-cats.onrender.com
+        </Loading>
       ) : (
         <Loading>I'm sorry, no matching results found!</Loading>
       )}
