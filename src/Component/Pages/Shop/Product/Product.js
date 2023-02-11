@@ -6,7 +6,6 @@ import Loading from "../../../Loading/Loading";
 const Product = () => {
   const itemPage = 6;
   const state = useSelector((state) => state.filter);
-  console.log("state.dataItem :>> ", state.dataItem);
   return (
     <div className="wrapper-product">
       <HeaderProduct />
